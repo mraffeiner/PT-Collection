@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Walls
   - 
   - 
   - 
@@ -44,8 +44,14 @@ TagManager:
   - name: Background
     uniqueID: 1650170369
     locked: 0
-  - name: Objects
+  - name: Walls
+    uniqueID: 367276691
+    locked: 0
+  - name: Towers
     uniqueID: 647855493
+    locked: 0
+  - name: Enemies
+    uniqueID: 1550305471
     locked: 0
   - name: Effects
     uniqueID: 3094476341
