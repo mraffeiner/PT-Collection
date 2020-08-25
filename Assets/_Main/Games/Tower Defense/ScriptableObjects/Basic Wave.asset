@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfa5b8d241f7754698b169645badd7e, type: 3}
   m_Name: Basic Wave
   m_EditorClassIdentifier: 
-  enemyAmount: 100
+  enemyAmount: 1000
   enemyType: {fileID: 11400000, guid: 2b280f4b183849042bf1131c289bd47a, type: 2}
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 0.2

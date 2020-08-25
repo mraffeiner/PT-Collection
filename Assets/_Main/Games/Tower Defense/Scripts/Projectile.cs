@@ -9,21 +9,53 @@ public class Projectile : MonoBehaviour
     public int Damage { get; set; }
     public float Speed { get; set; }
 
+    Vector3 targetPosition = Vector3.zero;
+    private bool targetValid = true;
+
     private void Awake() => SpriteRenderer = GetComponent<SpriteRenderer>();
+
+    private void Start() => GameObject.FindObjectOfType<Core>().EnemyEntered += OnEnemyEnteredCore;
+
+    private void OnDestroy() => GameObject.FindObjectOfType<Core>().EnemyEntered -= OnEnemyEnteredCore;
+
+    private void OnEnable() => targetValid = true;
 
     private void LateUpdate()
     {
-        var targetPosition = Target.transform.position + targetOffset;
+        if (Target.Health <= 0)
+            targetValid = false;
 
-        if (Vector2.Distance(transform.position, targetPosition) > .1f)
+        if (targetValid)
         {
-            var directionToTarget = (targetPosition - transform.position).normalized;
-            transform.position += directionToTarget * Speed;
+            targetPosition = Target.transform.position + targetOffset;
+            SeekAliveTarget();
         }
+        else
+            SeekDeadTarget();
+    }
+
+    private void OnEnemyEnteredCore(Enemy enemy)
+    {
+        if (Target == enemy)
+            targetValid = false;
+    }
+
+    private void SeekAliveTarget()
+    {
+        if (Vector2.Distance(targetPosition, transform.position) > .1f)
+            transform.position += (targetPosition - transform.position).normalized * Speed;
         else
         {
             Target.TakeDamage(Damage);
             gameObject.SetActive(false);
         }
+    }
+
+    private void SeekDeadTarget()
+    {
+        if (Vector2.Distance(targetPosition, transform.position) > .1f)
+            transform.position += (targetPosition - transform.position).normalized * Speed;
+        else
+            gameObject.SetActive(false);
     }
 }
