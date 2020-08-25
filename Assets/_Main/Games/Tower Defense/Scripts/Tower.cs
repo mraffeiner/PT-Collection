@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform projectileSpawn = null;
     [SerializeField] private CircleCollider2D rangeTrigger = null;
     [SerializeField] private Light2D rangeLight = null;
+    [SerializeField] private bool isDummy = false;
 
     private Core core;
     private WaitForSeconds waitForCooldown;
@@ -26,9 +27,10 @@ public class Tower : MonoBehaviour
 
         rangeTrigger.radius = stats.attackRange;
         rangeLight.pointLightInnerRadius = 0f;
-        rangeLight.pointLightOuterRadius = stats.attackRange + .5f;
+        rangeLight.pointLightOuterRadius = stats.attackRange + 1f;
 
-        StartCoroutine(ShootLoop());
+        if (!isDummy)
+            StartCoroutine(ShootLoop());
     }
 
     private void Update()

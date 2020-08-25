@@ -205,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &723388512668251669
 Transform:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000019a5b629332e415857d9d26bfc8675c35f671b8
+  m_ApplyToSortingLayers: 019a5b62
   m_ShapePath:
   - {x: -0.28453547, y: -0.83796, z: 0}
   - {x: 0.32138717, y: -0.84178835, z: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   - {x: -0.39668226, y: -0.79609996, z: 0}
   m_ShapePathHash: 1736346961
   m_Mesh: {fileID: 0}
-  m_InstanceId: -27490
+  m_InstanceId: 65692
 --- !u!1 &5712516092260897366
 GameObject:
   m_ObjectHideFlags: 0
