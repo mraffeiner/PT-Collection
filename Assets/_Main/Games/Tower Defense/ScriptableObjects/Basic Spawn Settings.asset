@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfa5b8d241f7754698b169645badd7e, type: 3}
-  m_Name: Basic Wave
+  m_Name: Basic Spawn Settings
   m_EditorClassIdentifier: 
-  enemyAmount: 1000
+  enemyAmount: 100
   enemyType: {fileID: 11400000, guid: 2b280f4b183849042bf1131c289bd47a, type: 2}
-  timeBetweenSpawns: 0.2
+  timeBetweenSpawnsMin: 0.1
+  timeBetweenSpawnsMax: 0.3
+  seed: 69

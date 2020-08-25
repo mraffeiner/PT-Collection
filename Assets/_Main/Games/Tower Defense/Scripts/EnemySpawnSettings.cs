@@ -6,5 +6,7 @@ public class EnemySpawnSettings : ScriptableObject
 {
     public int enemyAmount;
     public EnemyStats enemyType;
-    public float timeBetweenSpawns;
+    public float timeBetweenSpawnsMin;
+    public float timeBetweenSpawnsMax;
+    public int seed;
 }

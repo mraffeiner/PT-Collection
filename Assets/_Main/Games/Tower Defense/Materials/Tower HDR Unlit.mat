@@ -38,7 +38,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_28D26331: {r: 2.164706, g: 2.164706, b: 2.164706, a: 1}
+    - Color_28D26331: {r: 1.7207954, g: 1.7207954, b: 1.7207954, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

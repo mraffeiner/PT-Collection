@@ -9,14 +9,19 @@ public class Projectile : MonoBehaviour
     public int Damage { get; set; }
     public float Speed { get; set; }
 
+    private Core core;
     Vector3 targetPosition = Vector3.zero;
     private bool targetValid = true;
 
-    private void Awake() => SpriteRenderer = GetComponent<SpriteRenderer>();
+    private void Awake()
+    {
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        core = GameObject.FindObjectOfType<Core>();
+    }
 
-    private void Start() => GameObject.FindObjectOfType<Core>().EnemyEntered += OnEnemyEnteredCore;
+    private void Start() => core.EnemyEntered += OnEnemyEnteredCore;
 
-    private void OnDestroy() => GameObject.FindObjectOfType<Core>().EnemyEntered -= OnEnemyEnteredCore;
+    private void OnDestroy() => core.EnemyEntered -= OnEnemyEnteredCore;
 
     private void OnEnable() => targetValid = true;
 

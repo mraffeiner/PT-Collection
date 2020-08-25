@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -18,17 +19,20 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < settings.enemyAmount; i++)
             enemies.Enqueue(settings.enemyType);
 
+        Random.InitState(settings.seed);
         StartCoroutine(SpawnLoop());
     }
 
     private IEnumerator SpawnLoop()
     {
+        yield return new WaitForSeconds(1f);
+
         while (enemies.Count > 0)
         {
             var enemy = enemies.Dequeue();
             SpawnEnemy?.Invoke(spawn, enemy);
 
-            yield return new WaitForSeconds(settings.timeBetweenSpawns);
+            yield return new WaitForSeconds(Random.Range(settings.timeBetweenSpawnsMin, settings.timeBetweenSpawnsMax));
         }
     }
 }

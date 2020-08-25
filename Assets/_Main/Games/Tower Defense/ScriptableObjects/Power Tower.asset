@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e656d0ecfbc260469672a724171f1b9, type: 3}
   m_Name: Power Tower
   m_EditorClassIdentifier: 
-  attackDamage: 4
+  attackDamage: 5
   attackRange: 3
-  attackCooldown: 0.2
+  attackCooldown: 0.25
   projectileSprite: {fileID: 21300000, guid: a20efb5fcbbbed14f894c96fe021066d, type: 3}
-  projectileSpeed: 0.05
+  projectileSpeed: 0.1
