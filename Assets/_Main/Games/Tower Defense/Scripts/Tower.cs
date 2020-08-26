@@ -47,9 +47,6 @@ public class Tower : MonoBehaviour
             enemiesInRange.Add(enemy);
             enemy.Reveal();
         }
-
-        if (target == null)
-            target = enemiesInRange.FirstOrDefault();
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -60,29 +57,39 @@ public class Tower : MonoBehaviour
             enemiesInRange.Remove(enemy);
             enemy.Hide();
         }
-
-        target = enemiesInRange.FirstOrDefault();
     }
 
     private IEnumerator ShootLoop()
     {
         while (true)
         {
-            if (target != null)
+            do
             {
-                Shoot?.Invoke(stats, projectileSpawn, target);
+                if (enemiesInRange.Count < 1)
+                    yield return new WaitForSeconds(0.1f);
 
-                target.HealthPrediction -= stats.attackDamage;
-                if (target.HealthPrediction <= 0)
-                {
-                    enemiesInRange.Remove(target);
-                    target = enemiesInRange.FirstOrDefault();
-                }
+                UpdateTarget();
+            } while (target == null);
 
-                yield return new WaitForSeconds(stats.attackCooldown);
-            }
-            else
-                yield return new WaitForSeconds(.1f);
+            transform.right = target.transform.position - transform.position;
+
+            target.HealthPrediction -= stats.attackDamage;
+            Shoot?.Invoke(stats, projectileSpawn, target);
+
+            yield return new WaitForSeconds(1f / stats.attacksPerSecond);
+        }
+    }
+
+    private void UpdateTarget()
+    {
+        target = enemiesInRange.FirstOrDefault();
+        if (target == null)
+            return;
+
+        if (target.HealthPrediction <= 0)
+        {
+            enemiesInRange.Remove(target);
+            target = null;
         }
     }
 }

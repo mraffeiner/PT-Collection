@@ -2,11 +2,11 @@
 
 public class ProjectilePool : ObjectPoolBase
 {
-    private void OnEnable() => Tower.Shoot += OnShootEvent;
+    private void OnEnable() => Tower.Shoot += OnTowerShot;
 
-    private void OnDisable() => Tower.Shoot -= OnShootEvent;
+    private void OnDisable() => Tower.Shoot -= OnTowerShot;
 
-    private void OnShootEvent(TowerStats stats, Transform spawn, Enemy target)
+    private void OnTowerShot(TowerStats stats, Transform spawn, Enemy target)
     {
         var projectileObject = GetInactiveFromPool();
         var projectileComponent = projectileObject.GetComponent<Projectile>();

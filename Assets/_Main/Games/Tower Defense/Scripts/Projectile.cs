@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour
 
     private Core core;
     Vector3 targetPosition = Vector3.zero;
-    private bool targetValid = true;
 
     private void Awake()
     {
@@ -19,36 +18,27 @@ public class Projectile : MonoBehaviour
         core = GameObject.FindObjectOfType<Core>();
     }
 
-    private void Start() => core.EnemyEntered += OnEnemyEnteredCore;
-
-    private void OnDestroy() => core.EnemyEntered -= OnEnemyEnteredCore;
-
-    private void OnEnable() => targetValid = true;
-
-    private void LateUpdate()
+    private void Start()
     {
-        if (Target.Health <= 0)
-            targetValid = false;
-
-        if (targetValid)
+        Enemy.Die += OnEnemyRemoved;
+        core.EnemyEntered += OnEnemyRemoved;
+    }
+    private void OnDestroy()
+    {
+        Enemy.Die -= OnEnemyRemoved;
+        core.EnemyEntered -= OnEnemyRemoved;
+    }
+    private void FixedUpdate()
+    {
+        if (Target == null)
         {
-            targetPosition = Target.transform.position + targetOffset;
-            SeekAliveTarget();
+            gameObject.SetActive(false);
+            return;
         }
-        else
-            SeekDeadTarget();
-    }
 
-    private void OnEnemyEnteredCore(Enemy enemy)
-    {
-        if (Target == enemy)
-            targetValid = false;
-    }
-
-    private void SeekAliveTarget()
-    {
-        if (Vector2.Distance(targetPosition, transform.position) > .1f)
-            transform.position += (targetPosition - transform.position).normalized * Speed;
+        targetPosition = Target.transform.position + targetOffset;
+        if (Vector2.Distance(targetPosition, transform.position) > .3f)
+            transform.position += (targetPosition - transform.position).normalized * Speed * Time.deltaTime;
         else
         {
             Target.TakeDamage(Damage);
@@ -56,11 +46,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void SeekDeadTarget()
+    private void OnEnemyRemoved(Enemy enemy)
     {
-        if (Vector2.Distance(targetPosition, transform.position) > .1f)
-            transform.position += (targetPosition - transform.position).normalized * Speed;
-        else
-            gameObject.SetActive(false);
+        if (Target == enemy)
+            Target = null;
     }
 }

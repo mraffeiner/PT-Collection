@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Pathfinding;
+using System;
 
 public class Enemy : MonoBehaviour
 {
+    public static event Action<Enemy> Die;
+
     [SerializeField] private EnemyStats stats = null;
     [SerializeField] private CanvasGroup healthbarCanvasGroup = null;
     [SerializeField] private Image healthbarFillImage = null;
@@ -11,6 +14,7 @@ public class Enemy : MonoBehaviour
     public int Health { get; private set; }
     public int HealthPrediction { get; set; }
     public int Damage => stats.damage;
+    public int Value => stats.value;
 
     private AIPath aiPath;
     private int revealCounter = 0;
@@ -53,6 +57,9 @@ public class Enemy : MonoBehaviour
         healthbarFillImage.fillAmount = (float)Health / (float)stats.maxHealth;
 
         if (Health <= 0)
+        {
+            Die?.Invoke(this);
             gameObject.SetActive(false);
+        }
     }
 }

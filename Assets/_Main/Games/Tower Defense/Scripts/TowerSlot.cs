@@ -4,17 +4,24 @@ using UnityEngine;
 public class TowerSlot : MonoBehaviour
 {
     [SerializeField] private List<GameObject> towerPrefabs = null;
-    [SerializeField] private GameObject selectedTowerDummy = null;
 
-    public void OnPointerEnter() => selectedTowerDummy.transform.position = transform.position;
+    public static Tower SelectedTowerDummy { get; set; }
 
-    public void OnPointerExit() => selectedTowerDummy.transform.localPosition = Vector3.zero;
+    private void Awake()
+    {
+        if (SelectedTowerDummy == null)
+            SelectedTowerDummy = GameObject.Find("Basic Tower").GetComponent<Tower>();
+    }
+
+    public void OnPointerEnter() => SelectedTowerDummy.transform.position = transform.position;
+
+    public void OnPointerExit() => SelectedTowerDummy.transform.localPosition = Vector3.zero;
 
     public void OnPointerClick()
     {
-        selectedTowerDummy.transform.localPosition = Vector3.zero;
+        SelectedTowerDummy.transform.localPosition = Vector3.zero;
 
-        var towerObject = Instantiate(towerPrefabs.Find(x => x.name == selectedTowerDummy.name));
+        var towerObject = Instantiate(towerPrefabs.Find(x => x.name == SelectedTowerDummy.name));
         towerObject.transform.position = transform.position;
 
         gameObject.SetActive(false);
