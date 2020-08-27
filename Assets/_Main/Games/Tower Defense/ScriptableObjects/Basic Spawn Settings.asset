@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAmount: 1000
   enemyType: {fileID: 11400000, guid: 2b280f4b183849042bf1131c289bd47a, type: 2}
-  timeBetweenSpawnsMin: 0.1
-  timeBetweenSpawnsMax: 0.3
+  timeBetweenSpawnsMin: 0.05
+  timeBetweenSpawnsMax: 0.2
   seed: 69

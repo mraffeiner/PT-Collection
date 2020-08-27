@@ -16,10 +16,14 @@ public class Tower : MonoBehaviour
     [SerializeField] private bool isDummy = false;
 
     private Core core;
+    private Animator animator;
+
     private WaitForSeconds waitForCooldown;
     private WaitForSeconds waitForEnemies;
     private List<Enemy> enemiesInRange;
     private Enemy target;
+
+    private void Awake() => animator = GetComponent<Animator>();
 
     private void Start()
     {
@@ -29,8 +33,13 @@ public class Tower : MonoBehaviour
         rangeLight.pointLightInnerRadius = 0f;
         rangeLight.pointLightOuterRadius = stats.attackRange + 1f;
 
-        if (!isDummy)
+        if (isDummy)
+            animator.enabled = false;
+        else
+        {
+            animator.SetTrigger("Placement");
             StartCoroutine(ShootLoop());
+        }
     }
 
     private void Update()
@@ -74,6 +83,7 @@ public class Tower : MonoBehaviour
             transform.right = target.transform.position - transform.position;
 
             target.HealthPrediction -= stats.attackDamage;
+            animator.SetTrigger("Shoot");
             Shoot?.Invoke(stats, projectileSpawn, target);
 
             yield return new WaitForSeconds(1f / stats.attacksPerSecond);

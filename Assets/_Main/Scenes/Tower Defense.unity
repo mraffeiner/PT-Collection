@@ -900,6 +900,10 @@ PrefabInstance:
       propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4152385082492107495, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4222650408998440672, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_IsActive
       value: 1
