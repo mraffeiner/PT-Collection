@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fcbd826ebaa89488f66a6dd5a66f6f, type: 3}
   m_Name: Enemy Basic
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  moveSpeed: 2
+  scale: {x: 0.25, y: 0.25}
+  maxHealth: 30
+  moveSpeed: 3
+  slowRecoverySpeed: 1
   damage: 1
   value: 1

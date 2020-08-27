@@ -2,11 +2,12 @@
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private Vector3 targetOffset = new Vector3(1f, .01f, 0f);
-
     public SpriteRenderer SpriteRenderer { get; private set; }
     public Enemy Target { get; set; }
     public int Damage { get; set; }
+    public float DamageRadius { get; set; }
+    public float SlowStrength { get; set; }
+    public float SlowDuration { get; set; }
     public float Speed { get; set; }
 
     private Core core;
@@ -36,12 +37,22 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        targetPosition = Target.transform.position + targetOffset;
+        targetPosition = Target.transform.position;
         if (Vector2.Distance(targetPosition, transform.position) > .3f)
             transform.position += (targetPosition - transform.position).normalized * Speed * Time.deltaTime;
         else
         {
-            Target.TakeDamage(Damage);
+            var hits = Physics2D.OverlapCircleAll(Target.transform.position, DamageRadius);
+            foreach (var hit in hits)
+            {
+                var enemy = hit.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(Damage);
+                    if (SlowStrength > 0f)
+                        enemy.AddSlow(1f - SlowStrength, SlowDuration);
+                }
+            }
             gameObject.SetActive(false);
         }
     }

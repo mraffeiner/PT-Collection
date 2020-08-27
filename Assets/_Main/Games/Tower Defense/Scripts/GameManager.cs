@@ -8,14 +8,16 @@ public class GameManager : MonoBehaviour
 
     // private void OnDestroy() => PlayerPrefs.Save();
 
+    private void Start() => Time.timeScale = 1f;
+
     private void Update()
     {
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
             Time.timeScale = 1f;
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            Time.timeScale = 2f;
-        if (Keyboard.current.digit3Key.wasPressedThisFrame)
             Time.timeScale = 3f;
+        if (Keyboard.current.digit3Key.wasPressedThisFrame)
+            Time.timeScale = 5f;
         if (Keyboard.current.rKey.wasPressedThisFrame)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

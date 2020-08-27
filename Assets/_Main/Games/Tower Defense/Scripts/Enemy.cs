@@ -7,14 +7,17 @@ public class Enemy : MonoBehaviour
 {
     public static event Action<Enemy> Died;
 
-    [SerializeField] private EnemyStats stats = null;
     [SerializeField] private CanvasGroup healthbarCanvasGroup = null;
     [SerializeField] private Image healthbarFillImage = null;
 
-    public int Health { get; private set; }
     public int HealthPrediction { get; set; }
-    public int Damage => stats.damage;
-    public int Value => stats.value;
+    public int MaxHealth { get; set; }
+    public int Damage { get; set; }
+    public int Value { get; set; }
+    public float MoveSpeed { get; set; }
+    public float SlowRecoverySpeed { get; set; }
+
+    private int health;
 
     private AIPath aiPath;
     private int revealCounter = 0;
@@ -27,13 +30,20 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        Health = stats.maxHealth;
-        HealthPrediction = Health;
-        aiPath.maxSpeed = stats.moveSpeed;
+        health = MaxHealth;
+        HealthPrediction = health;
         revealCounter = 0;
 
         healthbarFillImage.fillAmount = 1f;
         healthbarCanvasGroup.alpha = 0f;
+    }
+
+    private void FixedUpdate()
+    {
+        if (aiPath.maxSpeed < MoveSpeed)
+            aiPath.maxSpeed += SlowRecoverySpeed * Time.deltaTime;
+        if (aiPath.maxSpeed > MoveSpeed)
+            aiPath.maxSpeed = MoveSpeed;
     }
 
     public void Reveal()
@@ -52,14 +62,20 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int value)
     {
-        Health = Mathf.Clamp(Health - value, 0, stats.maxHealth);
+        health = Mathf.Clamp(health - value, 0, MaxHealth);
 
-        healthbarFillImage.fillAmount = (float)Health / (float)stats.maxHealth;
+        healthbarFillImage.fillAmount = (float)health / (float)MaxHealth;
 
-        if (Health <= 0)
+        if (health <= 0)
         {
             Died?.Invoke(this);
             gameObject.SetActive(false);
         }
+    }
+
+    public void AddSlow(float value, float duration)
+    {
+        if (aiPath.maxSpeed > MoveSpeed * value)
+            aiPath.maxSpeed = MoveSpeed * value;
     }
 }

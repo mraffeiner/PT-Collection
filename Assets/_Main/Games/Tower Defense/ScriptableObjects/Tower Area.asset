@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Tower Area
   m_EditorClassIdentifier: 
   cost: 20
-  attackDamage: 3
   attackRange: 4
-  attacksPerSecond: 0.5
+  attackDamage: 5
+  damageRadius: 1
+  slowStrength: 0
+  attacksPerSecond: 1
   projectileColor: {r: 1, g: 0.9628597, b: 0.3820755, a: 1}
-  projectileSpeed: 7
+  projectileSpeed: 10

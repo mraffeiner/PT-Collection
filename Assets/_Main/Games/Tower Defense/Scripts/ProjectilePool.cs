@@ -17,6 +17,8 @@ public class ProjectilePool : ObjectPoolBase
         projectileComponent.SpriteRenderer.color = stats.projectileColor;
         projectileComponent.Target = target;
         projectileComponent.Damage = stats.attackDamage;
+        projectileComponent.DamageRadius = stats.damageRadius;
+        projectileComponent.SlowStrength = stats.slowStrength;
         projectileComponent.Speed = stats.projectileSpeed;
 
         projectileObject.SetActive(true);

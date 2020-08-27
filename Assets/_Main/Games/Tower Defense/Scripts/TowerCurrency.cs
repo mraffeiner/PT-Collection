@@ -4,12 +4,13 @@ using UnityEngine;
 public class TowerCurrency : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currencyText = null;
+    [SerializeField] private int startAmount = 20;
 
     public int TotalLights { get; private set; }
 
     private void Start()
     {
-        TotalLights = 20;
+        TotalLights = startAmount;
 
         currencyText.text = TotalLights.ToString();
     }
