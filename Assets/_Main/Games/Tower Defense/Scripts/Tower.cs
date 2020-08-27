@@ -7,13 +7,15 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Tower : MonoBehaviour
 {
-    public static event Action<TowerStats, Transform, Enemy> Shoot;
+    public static event Action<TowerStats, Transform, Enemy> Fired;
 
     [SerializeField] private TowerStats stats = null;
     [SerializeField] private Transform projectileSpawn = null;
     [SerializeField] private CircleCollider2D rangeTrigger = null;
     [SerializeField] private Light2D rangeLight = null;
     [SerializeField] private bool isDummy = false;
+
+    public int Cost => stats.cost;
 
     private Core core;
     private Animator animator;
@@ -84,7 +86,7 @@ public class Tower : MonoBehaviour
 
             target.HealthPrediction -= stats.attackDamage;
             animator.SetTrigger("Shoot");
-            Shoot?.Invoke(stats, projectileSpawn, target);
+            Fired?.Invoke(stats, projectileSpawn, target);
 
             yield return new WaitForSeconds(1f / stats.attacksPerSecond);
         }

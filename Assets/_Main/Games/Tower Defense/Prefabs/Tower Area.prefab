@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3280012571806602975
+--- !u!1001 &185832965784254534
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Color.g
-      value: 0.39049864
+      value: 0.9628597
       objectReference: {fileID: 0}
     - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Color.b
-      value: 0.36320752
+      value: 0.3820755
       objectReference: {fileID: 0}
     - target: {fileID: 3578429950934463492, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Name
-      value: Tower Strong
+      value: Tower Area
       objectReference: {fileID: 0}
     - target: {fileID: 3904350054215062017, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,15 +73,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5049079442709520729, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Color.g
-      value: 0.7555334
+      value: 0.9858491
       objectReference: {fileID: 0}
     - target: {fileID: 5049079442709520729, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Color.b
-      value: 0.740566
+      value: 0.7783019
       objectReference: {fileID: 0}
     - target: {fileID: 6254934734008848683, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 11400000, guid: 72ddda0556a272d458e49d5830bee3bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 34f7be499e7bb3a4fb4e7a5ea176f9c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}

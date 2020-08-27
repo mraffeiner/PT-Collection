@@ -9,12 +9,19 @@ public class ParticleSystemManager : MonoBehaviour
     {
         public string name;
         public ParticleSystem system;
+
+        public NameSystemPair(string name, ParticleSystem system)
+        {
+            this.name = name;
+            this.system = system;
+        }
     }
+
     [SerializeField] private List<NameSystemPair> nameSystemPairs = null;
 
-    private void OnEnable() => Enemy.Die += OnEnemyDied;
+    private void OnEnable() => Enemy.Died += OnEnemyDied;
 
-    private void OnDisable() => Enemy.Die -= OnEnemyDied;
+    private void OnDisable() => Enemy.Died -= OnEnemyDied;
 
     private void OnEnemyDied(Enemy enemy)
     {

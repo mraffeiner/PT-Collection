@@ -5,7 +5,7 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
-    public static event Action<Enemy> Die;
+    public static event Action<Enemy> Died;
 
     [SerializeField] private EnemyStats stats = null;
     [SerializeField] private CanvasGroup healthbarCanvasGroup = null;
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
-            Die?.Invoke(this);
+            Died?.Invoke(this);
             gameObject.SetActive(false);
         }
     }

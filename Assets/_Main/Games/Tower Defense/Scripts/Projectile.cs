@@ -20,12 +20,12 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        Enemy.Die += OnEnemyRemoved;
+        Enemy.Died += OnEnemyRemoved;
         core.EnemyEntered += OnEnemyRemoved;
     }
     private void OnDestroy()
     {
-        Enemy.Die -= OnEnemyRemoved;
+        Enemy.Died -= OnEnemyRemoved;
         core.EnemyEntered -= OnEnemyRemoved;
     }
     private void FixedUpdate()

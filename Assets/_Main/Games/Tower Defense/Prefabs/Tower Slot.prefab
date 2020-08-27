@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: f5db84f695fd7ac4cba4e6a46a5e6f54, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -250,5 +250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrefabs:
-  - {fileID: 9008317303062196155, guid: 318c829cf1582c642b2744050bd065a0, type: 3}
   - {fileID: 2030508920745239259, guid: 44e7a8bd9bbbf2c4cba577a1c749d4ff, type: 3}
+  - {fileID: 292461032496218679, guid: 0bf660276ec780a45862f9c20e858925, type: 3}
+  - {fileID: 3692130418149133378, guid: 7c57570c94d695240a256669721d303e, type: 3}

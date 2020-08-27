@@ -129,7 +129,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.3
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000019a5b629332e415857d9d26bfc8675c35f671b8
   m_LightCookieSprite: {fileID: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af35cd0c32f3a44aa917a4019f4f2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 5f1ee512472b36242a73481d0d662e75, type: 2}
+  stats: {fileID: 0}
   projectileSpawn: {fileID: 8574905207815965351}
   rangeTrigger: {fileID: 8399095131055029611}
   rangeLight: {fileID: 5049079442709520729}

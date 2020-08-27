@@ -1,15 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5524469576472452031
+--- !u!1001 &3865817835167413811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.36320752
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7019268
+      objectReference: {fileID: 0}
     - target: {fileID: 3578429950934463492, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: Tower Slow
       objectReference: {fileID: 0}
     - target: {fileID: 3904350054215062017, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,5 +63,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5049079442709520729, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7311321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049079442709520729, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049079442709520729, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254934734008848683, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 97db7441fa4a1074db94a926c4b08b09, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}

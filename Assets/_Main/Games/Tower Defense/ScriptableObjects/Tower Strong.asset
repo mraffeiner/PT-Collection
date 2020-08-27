@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e656d0ecfbc260469672a724171f1b9, type: 3}
   m_Name: Tower Strong
   m_EditorClassIdentifier: 
+  cost: 10
   attackDamage: 5
-  attackRange: 3
+  attackRange: 5
   attacksPerSecond: 1
-  projectileColor: {r: 0.6745098, g: 0.227451, b: 0.19607845, a: 1}
-  projectileSpeed: 5
+  projectileColor: {r: 1, g: 0.39049864, b: 0.36320752, a: 1}
+  projectileSpeed: 10
