@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (6)
@@ -281,7 +285,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ef06fdf84f5e974893842b77b0aff6a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -312,7 +316,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -417,7 +421,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ef06fdf84f5e974893842b77b0aff6a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -448,7 +452,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -668,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot
@@ -921,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (1)
@@ -937,6 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245776761}
   - component: {fileID: 245776762}
+  - component: {fileID: 245776763}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -990,6 +1003,19 @@ MonoBehaviour:
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 1
   m_ConstraintCount: 2
+--- !u!114 &245776763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245776760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1 &278173693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1075,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Wave
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ef06fdf84f5e974893842b77b0aff6a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1080,7 +1106,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1151,6 +1177,22 @@ PrefabInstance:
     - target: {fileID: 1464174531728156725, guid: 236467232298de3409b32b69faddd924, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 245776763}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1737976032}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_IsOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2866198175531160451, guid: 236467232298de3409b32b69faddd924, type: 3}
       propertyPath: m_Name
@@ -1270,6 +1312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4152385082375162708, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4152385082409322149, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1278,12 +1324,28 @@ PrefabInstance:
       propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4152385082492107493, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4152385082492107495, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4152385082580718122, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4222650408998440672, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247487537704108538, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653781561679951443, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6867268705836564487, guid: 88fc997afb069114bab0981d58963413, type: 3}
@@ -1329,6 +1391,10 @@ PrefabInstance:
     - target: {fileID: 7752801892076143899, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213907536009828358, guid: 88fc997afb069114bab0981d58963413, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9191283340796060922, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_Name
@@ -1811,6 +1877,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (9)
@@ -1989,7 +2059,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'HP:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ef06fdf84f5e974893842b77b0aff6a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2020,7 +2090,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2123,7 +2193,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ef06fdf84f5e974893842b77b0aff6a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2154,7 +2224,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2711,7 +2781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296411689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: -2.31, z: 0}
+  m_LocalPosition: {x: 3.31, y: -2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1751126315}
@@ -2922,6 +2992,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (10)
@@ -3135,7 +3209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474707318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.98, y: -2.12, z: 0}
+  m_LocalPosition: {x: -2.21, y: -2.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1751126315}
@@ -8455,6 +8529,22 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 245776763}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1552811171}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2866198175531160451, guid: 236467232298de3409b32b69faddd924, type: 3}
       propertyPath: m_Name
       value: Area Tower
@@ -8559,6 +8649,10 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.3820755
       objectReference: {fileID: 0}
+    - target: {fileID: 4212023922390361385, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: bf83633090c0dee4e87aecd22ef73c8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 236467232298de3409b32b69faddd924, type: 3}
 --- !u!1001 &1680326675
@@ -8652,6 +8746,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (3)
@@ -8749,6 +8847,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (8)
@@ -8846,6 +8948,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (5)
@@ -8878,6 +8984,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1464174531728156725, guid: 236467232298de3409b32b69faddd924, type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Group
+      value: 
+      objectReference: {fileID: 245776763}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1048833887}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109932627928278437, guid: 236467232298de3409b32b69faddd924, type: 3}
+      propertyPath: m_IsOn
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2866198175531160451, guid: 236467232298de3409b32b69faddd924, type: 3}
@@ -8972,18 +9094,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1048833887}
-    - target: {fileID: 4212023922390361385, guid: 236467232298de3409b32b69faddd924, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212023922390361385, guid: 236467232298de3409b32b69faddd924, type: 3}
-      propertyPath: m_Color.g
-      value: 0.39049864
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212023922390361385, guid: 236467232298de3409b32b69faddd924, type: 3}
-      propertyPath: m_Color.b
-      value: 0.36320752
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 236467232298de3409b32b69faddd924, type: 3}
 --- !u!224 &1713733597 stripped
@@ -9017,6 +9127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af35cd0c32f3a44aa917a4019f4f2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1742346629 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4152385082492107493, guid: 88fc997afb069114bab0981d58963413, type: 3}
+  m_PrefabInstance: {fileID: 401787605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751126314
 GameObject:
   m_ObjectHideFlags: 0
@@ -9158,6 +9273,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (4)
@@ -9535,7 +9654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: bf83633090c0dee4e87aecd22ef73c8e, type: 2}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -9652,6 +9771,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (7)
@@ -9702,7 +9825,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125889302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9810,7 +9933,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129732215}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9941,6 +10064,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7687328617605078125, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1742346629}
     - target: {fileID: 7945833220528835252, guid: 532b771b678381d4ebe04a446a2f00b8, type: 3}
       propertyPath: m_Name
       value: Tower Slot (2)
