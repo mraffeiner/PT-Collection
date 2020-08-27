@@ -10,7 +10,7 @@ public class TowerSlot : MonoBehaviour
     private void Awake()
     {
         if (SelectedTowerDummy == null)
-            SelectedTowerDummy = GameObject.Find("Basic Tower").GetComponent<Tower>();
+            SelectedTowerDummy = GameObject.Find("Tower Basic").GetComponent<Tower>();
     }
 
     public void OnPointerEnter() => SelectedTowerDummy.transform.position = transform.position;

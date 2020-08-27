@@ -14,7 +14,7 @@ public class ProjectilePool : ObjectPoolBase
         projectileObject.transform.position = spawn.position;
         projectileObject.transform.rotation = spawn.rotation;
 
-        projectileComponent.SpriteRenderer.sprite = stats.projectileSprite;
+        projectileComponent.SpriteRenderer.color = stats.projectileColor;
         projectileComponent.Target = target;
         projectileComponent.Damage = stats.attackDamage;
         projectileComponent.Speed = stats.projectileSpeed;

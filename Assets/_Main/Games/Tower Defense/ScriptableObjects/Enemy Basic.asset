@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e656d0ecfbc260469672a724171f1b9, type: 3}
-  m_Name: Basic Tower
+  m_Script: {fileID: 11500000, guid: 32fcbd826ebaa89488f66a6dd5a66f6f, type: 3}
+  m_Name: Enemy Basic
   m_EditorClassIdentifier: 
-  attackDamage: 1
-  attackRange: 4
-  attacksPerSecond: 3
-  projectileSprite: {fileID: 21300000, guid: a20efb5fcbbbed14f894c96fe021066d, type: 3}
-  projectileSpeed: 5
+  maxHealth: 10
+  moveSpeed: 3
+  damage: 1
+  value: 1
