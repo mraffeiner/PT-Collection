@@ -8,30 +8,37 @@ public class Core : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI healthText = null;
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int health = 100;
 
-    private void Start()
+    private GameController gameController;
+
+    private void Awake() => gameController = FindObjectOfType<GameController>();
+
+    private int health;
+    private int Health
     {
-        health = maxHealth;
-
-        healthText.text = health.ToString();
+        get => health; set
+        {
+            health = value;
+            healthText.text = health.ToString();
+        }
     }
+
+    private void Start() => Health = maxHealth;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var enemy = other.GetComponent<Enemy>();
         if (enemy == null)
             return;
 
-        health = Mathf.Clamp(health - enemy.Damage, 0, maxHealth);
+        Health = Mathf.Clamp(Health - enemy.Damage, 0, maxHealth);
         EnemyEntered?.Invoke(enemy);
         enemy.gameObject.SetActive(false);
 
-        healthText.text = health.ToString();
-
-        if (health <= 0)
+        if (Health <= 0)
         {
-            Time.timeScale = 0f;
-            Debug.Log("Game Over");
+            gameController.Lose();
+            enabled = false;
         }
     }
 }

@@ -2,6 +2,8 @@
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private float distanceTolerance = .1f;
+
     public SpriteRenderer SpriteRenderer { get; private set; }
     public Enemy Target { get; set; }
     public int Damage { get; set; }
@@ -24,19 +26,39 @@ public class Projectile : MonoBehaviour
         Enemy.Died += OnEnemyRemoved;
         core.EnemyEntered += OnEnemyRemoved;
     }
+
     private void OnDestroy()
     {
         Enemy.Died -= OnEnemyRemoved;
         core.EnemyEntered -= OnEnemyRemoved;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
         if (Target != null)
             targetPosition = Target.transform.position;
 
-        if (Vector2.Distance(targetPosition, transform.position) > .3f)
-            transform.position += (targetPosition - transform.position).normalized * Speed * Time.deltaTime;
+        FollowTarget();
+    }
+
+    private void FollowTarget()
+    {
+        var vectorToTarget = targetPosition - transform.position;
+        if (vectorToTarget.sqrMagnitude > distanceTolerance)
+        {
+            var step = vectorToTarget.normalized * Speed * Time.timeScale * Time.fixedDeltaTime;
+            transform.Translate(step);
+        }
         else
+        {
+            DealDamage();
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void DealDamage()
+    {
+        if (DamageRadius > 0f)
         {
             var hits = Physics2D.OverlapCircleAll(targetPosition, DamageRadius);
             foreach (var hit in hits)
@@ -49,8 +71,9 @@ public class Projectile : MonoBehaviour
                         enemy.AddSlow(1f - SlowStrength, SlowDuration);
                 }
             }
-            gameObject.SetActive(false);
         }
+        else if (Target != null)
+            Target.TakeDamage(Damage);
     }
 
     private void OnEnemyRemoved(Enemy enemy)

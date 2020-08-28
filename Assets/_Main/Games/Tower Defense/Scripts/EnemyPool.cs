@@ -6,11 +6,11 @@ public class EnemyPool : ObjectPoolBase
 
     private void Awake() => spawner = FindObjectOfType<WaveSpawner>();
 
-    private void OnEnable() => spawner.SpawnEnemy += OnEnemySpawnEvent;
+    private void OnEnable() => spawner.SpawnEnemy += OnEnemySpawned;
 
-    private void OnDisable() => spawner.SpawnEnemy -= OnEnemySpawnEvent;
+    private void OnDisable() => spawner.SpawnEnemy -= OnEnemySpawned;
 
-    private void OnEnemySpawnEvent(Transform spawn, EnemyStats stats)
+    private void OnEnemySpawned(Transform spawn, EnemyStats stats)
     {
         var enemyObject = GetInactiveFromPool();
         var enemyComponent = enemyObject.GetComponent<Enemy>();

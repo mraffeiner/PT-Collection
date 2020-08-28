@@ -3,7 +3,7 @@
 [CreateAssetMenu]
 public class EnemyWave : ScriptableObject
 {
-    public int enemyAmount;
+    public int waveSize;
     public EnemyStats enemyType;
     public float spawnRate;
     public float spawnRateVariance;

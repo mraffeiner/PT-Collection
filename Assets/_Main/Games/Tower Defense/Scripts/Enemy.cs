@@ -5,6 +5,7 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
+    public static event Action<Enemy> Spawned;
     public static event Action<Enemy> Died;
 
     [SerializeField] private CanvasGroup healthbarCanvasGroup = null;
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour
 
         healthbarFillImage.fillAmount = 1f;
         healthbarCanvasGroup.alpha = 0f;
+
+        Spawned?.Invoke(this);
     }
 
     private void FixedUpdate()

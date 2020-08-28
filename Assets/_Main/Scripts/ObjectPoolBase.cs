@@ -14,7 +14,10 @@ public abstract class ObjectPoolBase : MonoBehaviour
             return inactiveObject;
 
         var newObject = Instantiate(objectPrefab, transform);
-        newObject.SetActive(false);
+
+        if (newObject.activeSelf)
+            newObject.SetActive(false);
+
         objectPool.Add(newObject);
 
         return newObject;

@@ -6,14 +6,17 @@ public class TowerCurrency : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currencyText = null;
     [SerializeField] private int startAmount = 20;
 
-    public int TotalLights { get; private set; }
-
-    private void Start()
+    private int totalLights;
+    public int TotalLights
     {
-        TotalLights = startAmount;
-
-        currencyText.text = TotalLights.ToString();
+        get => totalLights; private set
+        {
+            totalLights = value;
+            currencyText.text = totalLights.ToString();
+        }
     }
+
+    private void Start() => TotalLights = startAmount;
     private void OnEnable()
     {
         Enemy.Died += OnEnemyDied;
@@ -24,17 +27,7 @@ public class TowerCurrency : MonoBehaviour
         Enemy.Died -= OnEnemyDied;
         TowerSlot.BuildTower -= OnTowerBuilt;
     }
-    private void OnEnemyDied(Enemy enemy)
-    {
-        TotalLights += enemy.Value;
+    private void OnEnemyDied(Enemy enemy) => TotalLights += enemy.Value;
 
-        currencyText.text = TotalLights.ToString();
-    }
-
-    private void OnTowerBuilt(Tower tower)
-    {
-        TotalLights -= tower.Cost;
-
-        currencyText.text = TotalLights.ToString();
-    }
+    private void OnTowerBuilt(Tower tower) => TotalLights -= tower.Cost;
 }
