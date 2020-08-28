@@ -20,10 +20,7 @@ public class WaveSpawner : MonoBehaviour
     private EnemyWave currentWave;
     private int waveCounter;
 
-    private void Start()
-    {
-        SpawnNextWave();
-    }
+    private void Start() => Invoke("SpawnNextWave", 2f);
 
     private void SpawnNextWave()
     {
@@ -38,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
                 var nextWave = Instantiate(currentWave);
                 nextWave.enemyAmount = Mathf.RoundToInt(nextWave.enemyAmount * (1 + endlessGrowthFactor));
                 currentWave = nextWave;
-                StartCoroutine(WaveSpawnLoop(currentWave));
+                StartCoroutine(EnemySpawnLoop(currentWave));
             }
             else
                 Debug.Log("Waves complete");
@@ -48,10 +45,10 @@ public class WaveSpawner : MonoBehaviour
 
         currentWave = waves.First();
         waves.Remove(currentWave);
-        StartCoroutine(WaveSpawnLoop(currentWave));
+        StartCoroutine(EnemySpawnLoop(currentWave));
     }
 
-    private IEnumerator WaveSpawnLoop(EnemyWave wave)
+    private IEnumerator EnemySpawnLoop(EnemyWave wave)
     {
         Queue<EnemyStats> enemies = new Queue<EnemyStats>();
         for (int i = 0; i < wave.enemyAmount; i++)

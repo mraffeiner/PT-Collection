@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerSlot : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class TowerSlot : MonoBehaviour
     public static Tower SelectedTowerDummy { get; set; }
 
     private TowerCurrency currency;
+    private Image image;
 
     private void Awake()
     {
         if (SelectedTowerDummy == null)
             SelectedTowerDummy = GameObject.Find("Tower Strong").GetComponent<Tower>();
         currency = FindObjectOfType<TowerCurrency>();
+        image = GetComponentInChildren<Image>();
     }
 
     public void OnPointerEnter() => SelectedTowerDummy.transform.position = transform.position;
@@ -26,10 +29,7 @@ public class TowerSlot : MonoBehaviour
     public void OnPointerClick()
     {
         if (SelectedTowerDummy.Cost > currency.TotalLights)
-        {
-            Debug.Log("Not enough lights");
             return;
-        }
 
         SelectedTowerDummy.transform.localPosition = Vector3.zero;
 

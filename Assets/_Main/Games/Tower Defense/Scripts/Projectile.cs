@@ -31,18 +31,14 @@ public class Projectile : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Target == null)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
+        if (Target != null)
+            targetPosition = Target.transform.position;
 
-        targetPosition = Target.transform.position;
         if (Vector2.Distance(targetPosition, transform.position) > .3f)
             transform.position += (targetPosition - transform.position).normalized * Speed * Time.deltaTime;
         else
         {
-            var hits = Physics2D.OverlapCircleAll(Target.transform.position, DamageRadius);
+            var hits = Physics2D.OverlapCircleAll(targetPosition, DamageRadius);
             foreach (var hit in hits)
             {
                 var enemy = hit.GetComponent<Enemy>();

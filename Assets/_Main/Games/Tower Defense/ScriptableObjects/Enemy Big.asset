@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: {x: 0.35, y: 0.3}
   maxHealth: 50
-  moveSpeed: 1.5
+  moveSpeed: 1
   slowRecoverySpeed: 5
   damage: 1
   value: 1

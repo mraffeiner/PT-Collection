@@ -10,7 +10,6 @@ public class Tower : MonoBehaviour
     public static event Action<TowerStats, Transform, Enemy> Fired;
 
     [SerializeField] private TowerStats stats = null;
-    [SerializeField] private Transform projectileSpawn = null;
     [SerializeField] private CircleCollider2D rangeTrigger = null;
     [SerializeField] private Light2D rangeLight = null;
     [SerializeField] private bool isDummy = false;
@@ -42,12 +41,6 @@ public class Tower : MonoBehaviour
             animator.SetTrigger("Placement");
             StartCoroutine(ShootLoop());
         }
-    }
-
-    private void Update()
-    {
-        if (target != null)
-            transform.right = target.transform.position - transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -82,11 +75,9 @@ public class Tower : MonoBehaviour
                 UpdateTarget();
             } while (target == null);
 
-            transform.right = target.transform.position - transform.position;
-
             target.HealthPrediction -= stats.attackDamage;
             animator.SetTrigger("Shoot");
-            Fired?.Invoke(stats, projectileSpawn, target);
+            Fired?.Invoke(stats, transform, target);
 
             yield return new WaitForSeconds(1f / stats.attacksPerSecond);
         }

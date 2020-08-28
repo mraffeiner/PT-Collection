@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e656d0ecfbc260469672a724171f1b9, type: 3}
   m_Name: Tower Area
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 50
   attackRange: 4
   attackDamage: 5
   damageRadius: 1
