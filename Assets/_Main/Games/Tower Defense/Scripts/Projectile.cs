@@ -2,15 +2,14 @@
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float distanceTolerance = .1f;
-
-    public SpriteRenderer SpriteRenderer { get; private set; }
     public Enemy Target { get; set; }
     public int Damage { get; set; }
     public float DamageRadius { get; set; }
     public float SlowStrength { get; set; }
     public float SlowDuration { get; set; }
     public float Speed { get; set; }
+
+    public SpriteRenderer SpriteRenderer { get; private set; }
 
     private Core core;
     Vector3 targetPosition = Vector3.zero;
@@ -38,22 +37,24 @@ public class Projectile : MonoBehaviour
         if (Target != null)
             targetPosition = Target.transform.position;
 
-        FollowTarget();
+        Move();
     }
 
-    private void FollowTarget()
+    private void Move()
     {
         var vectorToTarget = targetPosition - transform.position;
-        if (vectorToTarget.sqrMagnitude > distanceTolerance)
-        {
-            var step = vectorToTarget.normalized * Speed * Time.timeScale * Time.fixedDeltaTime;
-            transform.Translate(step);
-        }
-        else
+        var moveVector = (vectorToTarget.normalized * Speed) * Time.deltaTime;
+
+        var distanceBeforeMoving = vectorToTarget.sqrMagnitude;
+        var distanceAfterMoving = (targetPosition - (transform.position + moveVector)).sqrMagnitude;
+
+        if (distanceBeforeMoving < .1f || distanceAfterMoving > distanceBeforeMoving)
         {
             DealDamage();
             gameObject.SetActive(false);
         }
+        else
+            transform.position += moveVector;
     }
 
     private void DealDamage()

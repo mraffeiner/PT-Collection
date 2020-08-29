@@ -201,9 +201,9 @@ GameObject:
   - component: {fileID: 1601903175573848844}
   - component: {fileID: 2222537634593489164}
   - component: {fileID: 5184829846143282606}
-  - component: {fileID: 5692196210537084747}
-  - component: {fileID: 7438879787065909858}
-  - component: {fileID: 9158005179826412414}
+  - component: {fileID: 7517179733177470221}
+  - component: {fileID: 2221716277338286077}
+  - component: {fileID: 390396465246669878}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbarCanvasGroup: {fileID: 1249224967891324620}
   healthbarFillImage: {fileID: 7222973118193819833}
---- !u!114 &5692196210537084747
+--- !u!114 &7517179733177470221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,7 +305,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &7438879787065909858
+--- !u!114 &2221716277338286077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,12 +318,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 1
+  radius: 0.01
   height: 0.01
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -334,14 +334,14 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.5
+  slowdownDistance: 0
   pickNextWaypointDist: 1
-  endReachedDistance: 0.25
+  endReachedDistance: 0
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &9158005179826412414
+--- !u!114 &390396465246669878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -424,7 +424,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1550305471
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63dcb6c354d89894ead90baae3a0e325, type: 3}
   m_Color: {r: 0.098039225, g: 0.098039225, b: 0.098039225, a: 1}
@@ -581,7 +581,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1550305471
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a20efb5fcbbbed14f894c96fe021066d, type: 3}
   m_Color: {r: 0.098039225, g: 0.098039225, b: 0.098039225, a: 0.078431375}

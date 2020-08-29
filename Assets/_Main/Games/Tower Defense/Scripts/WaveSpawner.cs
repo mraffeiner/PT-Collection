@@ -83,9 +83,8 @@ public class WaveSpawner : MonoBehaviour
                 if (nextWave.spawnRate < spawnRateCap)
                     nextWave.spawnRate = nextWave.spawnRate * (1 + spawnRateGrowthFactor);
 
-                StartCoroutine(EnemySpawnLoop(nextWave));
-
                 currentWave = nextWave;
+                StartCoroutine(EnemySpawnLoop(currentWave));
             }
             else
                 Debug.Log("Stage Clear");

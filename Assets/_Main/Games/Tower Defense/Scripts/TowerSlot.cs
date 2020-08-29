@@ -16,15 +16,21 @@ public class TowerSlot : MonoBehaviour
 
     private void Awake()
     {
-        if (SelectedTowerDummy == null)
-            SelectedTowerDummy = GameObject.Find("Tower Strong").GetComponent<Tower>();
         currency = FindObjectOfType<TowerCurrency>();
         image = GetComponentInChildren<Image>();
     }
 
-    public void OnPointerEnter() => SelectedTowerDummy.transform.position = transform.position;
+    public void OnPointerEnter()
+    {
+        if (SelectedTowerDummy != null)
+            SelectedTowerDummy.transform.position = transform.position;
+    }
 
-    public void OnPointerExit() => SelectedTowerDummy.transform.localPosition = Vector3.zero;
+    public void OnPointerExit()
+    {
+        if (SelectedTowerDummy != null)
+            SelectedTowerDummy.transform.localPosition = Vector3.zero;
+    }
 
     public void OnPointerClick()
     {

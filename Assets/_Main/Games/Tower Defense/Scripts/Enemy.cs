@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Pathfinding;
 using System;
+using System.Collections.Generic;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,9 +19,8 @@ public class Enemy : MonoBehaviour
     public float MoveSpeed { get; set; }
     public float SlowRecoverySpeed { get; set; }
 
-    private int health;
-
     private AIPath aiPath;
+    private int health;
     private int revealCounter = 0;
 
     private void Awake()
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         Spawned?.Invoke(this);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (aiPath.maxSpeed < MoveSpeed)
             aiPath.maxSpeed += SlowRecoverySpeed * Time.deltaTime;
