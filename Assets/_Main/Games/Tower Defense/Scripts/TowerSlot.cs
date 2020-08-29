@@ -22,19 +22,23 @@ public class TowerSlot : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        if (SelectedTowerDummy != null)
-            SelectedTowerDummy.transform.position = transform.position;
+        if (SelectedTowerDummy == null)
+            return;
+
+        SelectedTowerDummy.transform.position = transform.position;
     }
 
     public void OnPointerExit()
     {
-        if (SelectedTowerDummy != null)
-            SelectedTowerDummy.transform.localPosition = Vector3.zero;
+        if (SelectedTowerDummy == null)
+            return;
+
+        SelectedTowerDummy.transform.localPosition = Vector3.zero;
     }
 
     public void OnPointerClick()
     {
-        if (SelectedTowerDummy.Cost > currency.TotalLights)
+        if (SelectedTowerDummy == null || SelectedTowerDummy.Cost > currency.TotalLights)
             return;
 
         SelectedTowerDummy.transform.localPosition = Vector3.zero;
