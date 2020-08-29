@@ -31,7 +31,7 @@ public class Core : MonoBehaviour
         if (enemy == null)
             return;
 
-        Health = Mathf.Clamp(Health - enemy.Damage, 0, maxHealth);
+        Health = Mathf.Clamp(Health - enemy.Stats.Damage, 0, maxHealth);
         EnemyEntered?.Invoke(enemy);
         enemy.gameObject.SetActive(false);
 

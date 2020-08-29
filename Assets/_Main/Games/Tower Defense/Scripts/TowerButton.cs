@@ -22,16 +22,16 @@ public class TowerButton : MonoBehaviour
 
     private void Start()
     {
-        costText.text = towerStats.cost.ToString();
+        costText.text = towerStats.Cost.ToString();
     }
 
     public void SelectTower(Tower towerDummy)
     {
         TowerSlot.SelectedTowerDummy = towerDummy;
-        rangeText.text = towerStats.attackRange.ToString();
-        damageText.text = towerStats.attackDamage.ToString();
-        reloadText.text = Math.Round(1f / towerStats.attacksPerSecond, 2).ToString() + "s";
-        splashText.text = towerStats.damageRadius.ToString();
-        slowText.text = (towerStats.slowStrength * 100).ToString() + "%";
+        rangeText.text = towerStats.AttackRange.ToString();
+        damageText.text = towerStats.AttackDamage.ToString();
+        reloadText.text = Math.Round(1f / towerStats.AttacksPerSecond, 2).ToString() + "s";
+        splashText.text = towerStats.DamageRadius.ToString();
+        slowText.text = (towerStats.SlowStrength * 100).ToString() + "%";
     }
 }

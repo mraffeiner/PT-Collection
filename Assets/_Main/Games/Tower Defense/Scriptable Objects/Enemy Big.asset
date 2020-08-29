@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Enemy Big
   m_EditorClassIdentifier: 
   scale: {x: 0.35, y: 0.3}
-  maxHealth: 100
+  maxHealth: 200
   moveSpeed: 1
-  slowRecoverySpeed: 5
+  slowRecoverySpeed: 0.5
   damage: 1
   value: 1

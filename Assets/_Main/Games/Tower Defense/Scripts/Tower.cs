@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private Light2D rangeLight = null;
     [SerializeField] private bool isDummy = false;
 
-    public int Cost => stats.cost;
+    public int Cost => stats.Cost;
 
     private Core core;
     private Animator animator;
@@ -30,9 +30,9 @@ public class Tower : MonoBehaviour
     {
         enemiesInRange = new List<Enemy>();
 
-        rangeTrigger.radius = stats.attackRange;
+        rangeTrigger.radius = stats.AttackRange;
         rangeLight.pointLightInnerRadius = 0f;
-        rangeLight.pointLightOuterRadius = stats.attackRange + 1f;
+        rangeLight.pointLightOuterRadius = stats.AttackRange + 1f;
 
         if (isDummy)
             animator.enabled = false;
@@ -75,17 +75,17 @@ public class Tower : MonoBehaviour
                 UpdateTarget();
             } while (target == null);
 
-            target.HealthPrediction -= stats.attackDamage;
+            target.HealthPrediction -= stats.AttackDamage;
             animator.SetTrigger("Shoot");
             Fired?.Invoke(stats, transform, target);
 
-            yield return new WaitForSeconds(1f / stats.attacksPerSecond);
+            yield return new WaitForSeconds(1f / stats.AttacksPerSecond);
         }
     }
 
     private void UpdateTarget()
     {
-        target = enemiesInRange.FirstOrDefault();
+        target = enemiesInRange.OrderBy(x => x.TravelDistancePrediction).LastOrDefault();
         if (target == null)
             return;
 

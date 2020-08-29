@@ -17,13 +17,9 @@ public class EnemyPool : ObjectPoolBase
 
         enemyObject.transform.position = spawn.position;
         enemyObject.transform.rotation = spawn.rotation;
-        enemyObject.transform.localScale = stats.scale;
+        enemyObject.transform.localScale = stats.Scale;
 
-        enemyComponent.MaxHealth = stats.maxHealth;
-        enemyComponent.Damage = stats.damage; ;
-        enemyComponent.Value = stats.value; ;
-        enemyComponent.MoveSpeed = stats.moveSpeed; ;
-        enemyComponent.SlowRecoverySpeed = stats.slowRecoverySpeed; ;
+        enemyComponent.Stats = stats;
 
         enemyObject.SetActive(true);
     }

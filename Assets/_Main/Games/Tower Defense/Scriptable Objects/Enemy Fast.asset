@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Enemy Fast
   m_EditorClassIdentifier: 
   scale: {x: 0.22, y: 0.25}
-  maxHealth: 25
+  maxHealth: 50
   moveSpeed: 4
-  slowRecoverySpeed: 10
+  slowRecoverySpeed: 5
   damage: 1
   value: 1

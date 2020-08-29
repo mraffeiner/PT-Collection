@@ -27,7 +27,7 @@ public class TowerCurrency : MonoBehaviour
         Enemy.Died -= OnEnemyDied;
         TowerSlot.BuildTower -= OnTowerBuilt;
     }
-    private void OnEnemyDied(Enemy enemy) => TotalLights += enemy.Value;
+    private void OnEnemyDied(Enemy enemy) => TotalLights += enemy.Stats.Value;
 
     private void OnTowerBuilt(Tower tower) => TotalLights -= tower.Cost;
 }

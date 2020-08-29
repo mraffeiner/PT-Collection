@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfa5b8d241f7754698b169645badd7e, type: 3}
   m_Name: Endless
   m_EditorClassIdentifier: 
-  waveSize: 10
+  waveSize: 5
   enemyType: {fileID: 11400000, guid: 2b280f4b183849042bf1131c289bd47a, type: 2}
-  waveCooldown: 5
   spawnRate: 0.5
   spawnRateVariance: 0.5
   seed: 69

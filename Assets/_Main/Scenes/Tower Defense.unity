@@ -3124,9 +3124,9 @@ MonoBehaviour:
   timeBetweenWaves: 5
   endless: 1
   waveSizeGrowthFactor: 0.2
-  waveSizeCap: 1000
+  waveSizeCap: 500
   spawnRateGrowthFactor: 0.1
-  spawnRateCap: 10
+  spawnRateCap: 5
 --- !u!1 &1043927548
 GameObject:
   m_ObjectHideFlags: 0

@@ -116,11 +116,11 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(spawnDelayBase - spawnDelayVariance, spawnDelayBase + spawnDelayVariance));
         }
 
+        while (activeEnemies.Count > 0)
+            yield return new WaitForSeconds(.1f);
+
         if (currentWave == wave)
         {
-            while (activeEnemies.Count > 0)
-                yield return new WaitForSeconds(.1f);
-
             Debug.Log("Wave Clear");
 
             yield return new WaitForSeconds(timeBetweenWaves);

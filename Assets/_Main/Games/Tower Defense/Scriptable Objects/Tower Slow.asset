@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Tower Slow
   m_EditorClassIdentifier: 
   cost: 100
+  attackDamage: 2
   attackRange: 3
-  attackDamage: 1
-  damageRadius: 0.25
-  slowStrength: 0.75
+  damageRadius: 0.2
+  slowStrength: 0.7
+  slowDuration: 1
   attacksPerSecond: 3
-  projectileColor: {r: 0.36320752, g: 0.7019268, b: 1, a: 1}
   projectileSpeed: 10
+  projectileColor: {r: 0.36320752, g: 0.7019268, b: 1, a: 1}

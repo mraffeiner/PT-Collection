@@ -14,12 +14,10 @@ public class ProjectilePool : ObjectPoolBase
         projectileObject.transform.position = spawn.position;
         projectileObject.transform.rotation = spawn.rotation;
 
-        projectileComponent.SpriteRenderer.color = stats.projectileColor;
+        projectileComponent.SpriteRenderer.color = stats.ProjectileColor;
         projectileComponent.Target = target;
-        projectileComponent.Damage = stats.attackDamage;
-        projectileComponent.DamageRadius = stats.damageRadius;
-        projectileComponent.SlowStrength = stats.slowStrength;
-        projectileComponent.Speed = stats.projectileSpeed;
+
+        projectileComponent.Stats = stats;
 
         projectileObject.SetActive(true);
     }
