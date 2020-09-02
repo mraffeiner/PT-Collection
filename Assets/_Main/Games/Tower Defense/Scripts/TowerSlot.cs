@@ -43,7 +43,7 @@ public class TowerSlot : MonoBehaviour
 
         SelectedTowerDummy.transform.localPosition = Vector3.zero;
 
-        var towerObject = Instantiate(towerPrefabs.Find(x => x.name == SelectedTowerDummy.name));
+        var towerObject = Instantiate(towerPrefabs.Find(x => x.name == SelectedTowerDummy.name), transform.parent);
         var towerComponent = towerObject.GetComponent<Tower>();
 
         towerObject.transform.position = transform.position;

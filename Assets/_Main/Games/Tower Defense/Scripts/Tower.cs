@@ -17,30 +17,55 @@ public class Tower : MonoBehaviour
     public int Cost => stats.Cost;
 
     private Core core;
+    private GameObject towerTooltip;
     private Animator animator;
-
-    private WaitForSeconds waitForCooldown;
-    private WaitForSeconds waitForEnemies;
     private List<Enemy> enemiesInRange;
     private Enemy target;
+    private bool hovering = false;
 
     private void Awake() => animator = GetComponent<Animator>();
 
     private void Start()
     {
-        enemiesInRange = new List<Enemy>();
-
-        rangeTrigger.radius = stats.AttackRange;
         rangeLight.pointLightInnerRadius = 0f;
         rangeLight.pointLightOuterRadius = stats.AttackRange + 1f;
 
         if (isDummy)
-            animator.enabled = false;
-        else
         {
-            animator.SetTrigger("Placement");
-            StartCoroutine(ShootLoop());
+            enabled = false;
+            return;
         }
+
+        enemiesInRange = new List<Enemy>();
+        rangeTrigger.radius = stats.AttackRange;
+
+        towerTooltip = GameObject.Find("World Canvas").transform.Find("Tower Tooltip").gameObject;
+
+        animator.SetTrigger("Placement");
+        StartCoroutine(ShootLoop());
+    }
+
+    private void Update() => UpdateTooltip();
+
+    private void UpdateTooltip()
+    {
+        if (towerTooltip == null || !hovering)
+            return;
+
+        towerTooltip.transform.position = transform.position + new Vector3(1f, 1f);
+        towerTooltip.SetActive(true);
+    }
+
+    public void OnPointerEnter()
+    {
+        if (!towerTooltip.activeSelf)
+            hovering = true;
+    }
+
+    public void OnPointerExit()
+    {
+        hovering = false;
+        towerTooltip.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
