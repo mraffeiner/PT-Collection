@@ -6,14 +6,13 @@ public class Core : MonoBehaviour
 {
     public event Action<Enemy> EnemyEntered;
 
+    [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private TextMeshProUGUI healthText = null;
     [SerializeField] private int maxHealth = 100;
 
-    private GameController gameController;
-
-    private void Awake() => gameController = FindObjectOfType<GameController>();
-
+    private TowerDefenseController towerDefenseController;
     private int health;
+
     private int Health
     {
         get => health; set
@@ -23,7 +22,17 @@ public class Core : MonoBehaviour
         }
     }
 
-    private void Start() => Health = maxHealth;
+    private void Awake()
+    {
+        towerDefenseController = FindObjectOfType<TowerDefenseController>();
+    }
+
+    private void Start()
+    {
+        Health = maxHealth;
+
+        towerDefenseController.enabled = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,8 +46,15 @@ public class Core : MonoBehaviour
 
         if (Health <= 0)
         {
-            gameController.Lose();
+            Lose();
             enabled = false;
         }
+    }
+
+    public void Lose()
+    {
+        GameSpeed.Factor = .2f;
+        towerDefenseController.enabled = false;
+        gameOverScreen.SetActive(true);
     }
 }
