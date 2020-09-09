@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Main/Scenes/Endless Runner.unity
+    guid: b18bcfad5dd9b464fa211c3332b24356
+  - enabled: 1
     path: Assets/_Main/Scenes/Tower Defense.unity
     guid: 466a2fe47aec89e4e91c9b497b7d07eb
   m_configObjects:

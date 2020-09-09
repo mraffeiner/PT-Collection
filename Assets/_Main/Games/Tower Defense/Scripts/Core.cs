@@ -10,7 +10,7 @@ public class Core : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthText = null;
     [SerializeField] private int maxHealth = 100;
 
-    private TowerDefenseController towerDefenseController;
+    private TowerDefenseInputHandler towerDefenseController;
     private int health;
 
     private int Health
@@ -22,15 +22,11 @@ public class Core : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        towerDefenseController = FindObjectOfType<TowerDefenseController>();
-    }
+    private void Awake() => towerDefenseController = FindObjectOfType<TowerDefenseInputHandler>();
 
     private void Start()
     {
         Health = maxHealth;
-
         towerDefenseController.enabled = true;
     }
 

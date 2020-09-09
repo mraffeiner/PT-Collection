@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TowerDefenseController : MonoBehaviour
+public class TowerDefenseInputHandler : MonoBehaviour
 {
     private InputMaster input;
     private WaveSpawner waveSpawner;

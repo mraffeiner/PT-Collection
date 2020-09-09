@@ -1278,7 +1278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4152385082409322153, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4152385082492107493, guid: 88fc997afb069114bab0981d58963413, type: 3}
       propertyPath: orthographic
@@ -1780,21 +1780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e51c60a21c3adb4d9db06af9d2121a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnReloadPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 611062913}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: ReloadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &611062913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5624,7 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17169eea95ad4740b77ef9b7a478e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameSystemPairs:
+  particleEntries:
   - name: EnemyDeath
     system: {fileID: 1599676787}
 --- !u!1001 &1570359152
@@ -5916,7 +5901,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1550305471
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0

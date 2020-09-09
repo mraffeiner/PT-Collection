@@ -161,6 +161,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Reload Scene",
+                    "type": "Button",
+                    "id": "93fa727d-5352-49a5-ac66-dbb02be887ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -227,6 +235,17 @@
                     "processors": "",
                     "groups": "KBM",
                     "action": "Slide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "700be877-5e6a-414e-be68-60bcf72ad0c3",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Reload Scene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

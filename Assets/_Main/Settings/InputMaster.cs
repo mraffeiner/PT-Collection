@@ -174,6 +174,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reload Scene"",
+                    ""type"": ""Button"",
+                    ""id"": ""93fa727d-5352-49a5-ac66-dbb02be887ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -242,6 +250,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Slide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""700be877-5e6a-414e-be68-60bcf72ad0c3"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Reload Scene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -278,6 +297,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_EndlessRunner = asset.FindActionMap("Endless Runner", throwIfNotFound: true);
         m_EndlessRunner_Jump = m_EndlessRunner.FindAction("Jump", throwIfNotFound: true);
         m_EndlessRunner_Slide = m_EndlessRunner.FindAction("Slide", throwIfNotFound: true);
+        m_EndlessRunner_ReloadScene = m_EndlessRunner.FindAction("Reload Scene", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -410,12 +430,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IEndlessRunnerActions m_EndlessRunnerActionsCallbackInterface;
     private readonly InputAction m_EndlessRunner_Jump;
     private readonly InputAction m_EndlessRunner_Slide;
+    private readonly InputAction m_EndlessRunner_ReloadScene;
     public struct EndlessRunnerActions
     {
         private @InputMaster m_Wrapper;
         public EndlessRunnerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_EndlessRunner_Jump;
         public InputAction @Slide => m_Wrapper.m_EndlessRunner_Slide;
+        public InputAction @ReloadScene => m_Wrapper.m_EndlessRunner_ReloadScene;
         public InputActionMap Get() { return m_Wrapper.m_EndlessRunner; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -431,6 +453,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Slide.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
                 @Slide.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
                 @Slide.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
+                @ReloadScene.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
             }
             m_Wrapper.m_EndlessRunnerActionsCallbackInterface = instance;
             if (instance != null)
@@ -441,6 +466,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Slide.started += instance.OnSlide;
                 @Slide.performed += instance.OnSlide;
                 @Slide.canceled += instance.OnSlide;
+                @ReloadScene.started += instance.OnReloadScene;
+                @ReloadScene.performed += instance.OnReloadScene;
+                @ReloadScene.canceled += instance.OnReloadScene;
             }
         }
     }
@@ -468,5 +496,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnJump(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
+        void OnReloadScene(InputAction.CallbackContext context);
     }
 }

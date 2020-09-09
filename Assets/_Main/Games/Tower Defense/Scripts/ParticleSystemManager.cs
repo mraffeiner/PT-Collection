@@ -5,19 +5,19 @@ using UnityEngine;
 public class ParticleSystemManager : MonoBehaviour
 {
     [Serializable]
-    private struct NameSystemPair
+    private struct ParticleEntry
     {
         public string name;
         public ParticleSystem system;
 
-        public NameSystemPair(string name, ParticleSystem system)
+        public ParticleEntry(string name, ParticleSystem system)
         {
             this.name = name;
             this.system = system;
         }
     }
 
-    [SerializeField] private List<NameSystemPair> nameSystemPairs = null;
+    [SerializeField] private List<ParticleEntry> particleEntries = null;
 
     private void OnEnable() => Enemy.Died += OnEnemyDied;
 
@@ -25,7 +25,7 @@ public class ParticleSystemManager : MonoBehaviour
 
     private void OnEnemyDied(Enemy enemy)
     {
-        var enemyDeathParticles = nameSystemPairs.Find(x => x.name == "EnemyDeath").system;
+        var enemyDeathParticles = particleEntries.Find(x => x.name == "EnemyDeath").system;
         transform.position = enemy.transform.position;
         enemyDeathParticles.Play();
     }

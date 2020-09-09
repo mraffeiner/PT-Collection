@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Obstacle
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - 
   - 
   - Walls
-  - 
+  - Ground
   - 
   - 
   - 
@@ -44,11 +47,14 @@ TagManager:
   - name: Background
     uniqueID: 1650170369
     locked: 0
-  - name: Walls
-    uniqueID: 367276691
-    locked: 0
   - name: Enemies
     uniqueID: 1550305471
+    locked: 0
+  - name: Player
+    uniqueID: 4289814209
+    locked: 0
+  - name: Walls
+    uniqueID: 367276691
     locked: 0
   - name: Towers
     uniqueID: 647855493
