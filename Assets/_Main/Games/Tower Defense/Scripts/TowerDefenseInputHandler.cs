@@ -18,12 +18,14 @@ public class TowerDefenseInputHandler : MonoBehaviour
     private void Start()
     {
         input.TowerDefense.SkipWave.performed += _ => waveSpawner.SkipWave();
-        input.TowerDefense.ReloadScene.performed += _ => sceneController.ReloadScene();
         input.TowerDefense.Speedx1.performed += _ => GameSpeed.Factor = 1f;
         input.TowerDefense.Speedx2.performed += _ => GameSpeed.Factor = 2f;
         input.TowerDefense.Speedx3.performed += _ => GameSpeed.Factor = 3f;
         input.TowerDefense.Speedx4.performed += _ => GameSpeed.Factor = 4f;
         input.TowerDefense.Speedx5.performed += _ => GameSpeed.Factor = 5f;
+
+        input.TowerDefense.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
+        input.TowerDefense.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
     }
 
     public void OnEnable() => input.TowerDefense.Enable();

@@ -28,6 +28,7 @@ public class Core : MonoBehaviour
     {
         Health = maxHealth;
         towerDefenseController.enabled = true;
+        GameSpeed.Factor = 1F;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

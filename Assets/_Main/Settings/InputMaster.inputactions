@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Exit To Main Menu",
+                    "type": "Button",
+                    "id": "5e6c1999-5590-4dbf-a736-2ae3daadbcc0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -139,6 +147,17 @@
                     "action": "Reload Scene",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8659032-868b-4509-9ff2-5527415e63b6",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Exit To Main Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -166,6 +185,14 @@
                     "name": "Reload Scene",
                     "type": "Button",
                     "id": "93fa727d-5352-49a5-ac66-dbb02be887ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Exit To Main Menu",
+                    "type": "Button",
+                    "id": "9345e8ea-c18c-4a58-86d8-9b4f6b3d7f82",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -246,6 +273,17 @@
                     "processors": "",
                     "groups": "KBM",
                     "action": "Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae81d662-f451-4e43-bd12-a2d13f5d9139",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Exit To Main Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -73,6 +73,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit To Main Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e6c1999-5590-4dbf-a736-2ae3daadbcc0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -152,6 +160,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Reload Scene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8659032-868b-4509-9ff2-5527415e63b6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Exit To Main Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -179,6 +198,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""Reload Scene"",
                     ""type"": ""Button"",
                     ""id"": ""93fa727d-5352-49a5-ac66-dbb02be887ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit To Main Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""9345e8ea-c18c-4a58-86d8-9b4f6b3d7f82"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -261,6 +288,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Reload Scene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae81d662-f451-4e43-bd12-a2d13f5d9139"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Exit To Main Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -293,11 +331,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_TowerDefense_Speedx5 = m_TowerDefense.FindAction("Speedx5", throwIfNotFound: true);
         m_TowerDefense_SkipWave = m_TowerDefense.FindAction("Skip Wave", throwIfNotFound: true);
         m_TowerDefense_ReloadScene = m_TowerDefense.FindAction("Reload Scene", throwIfNotFound: true);
+        m_TowerDefense_ExitToMainMenu = m_TowerDefense.FindAction("Exit To Main Menu", throwIfNotFound: true);
         // Endless Runner
         m_EndlessRunner = asset.FindActionMap("Endless Runner", throwIfNotFound: true);
         m_EndlessRunner_Jump = m_EndlessRunner.FindAction("Jump", throwIfNotFound: true);
         m_EndlessRunner_Slide = m_EndlessRunner.FindAction("Slide", throwIfNotFound: true);
         m_EndlessRunner_ReloadScene = m_EndlessRunner.FindAction("Reload Scene", throwIfNotFound: true);
+        m_EndlessRunner_ExitToMainMenu = m_EndlessRunner.FindAction("Exit To Main Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -354,6 +394,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_TowerDefense_Speedx5;
     private readonly InputAction m_TowerDefense_SkipWave;
     private readonly InputAction m_TowerDefense_ReloadScene;
+    private readonly InputAction m_TowerDefense_ExitToMainMenu;
     public struct TowerDefenseActions
     {
         private @InputMaster m_Wrapper;
@@ -365,6 +406,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Speedx5 => m_Wrapper.m_TowerDefense_Speedx5;
         public InputAction @SkipWave => m_Wrapper.m_TowerDefense_SkipWave;
         public InputAction @ReloadScene => m_Wrapper.m_TowerDefense_ReloadScene;
+        public InputAction @ExitToMainMenu => m_Wrapper.m_TowerDefense_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_TowerDefense; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -395,6 +437,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ReloadScene.started -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.performed -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.canceled -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
+                @ExitToMainMenu.started -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.performed -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.canceled -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
             }
             m_Wrapper.m_TowerDefenseActionsCallbackInterface = instance;
             if (instance != null)
@@ -420,6 +465,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ReloadScene.started += instance.OnReloadScene;
                 @ReloadScene.performed += instance.OnReloadScene;
                 @ReloadScene.canceled += instance.OnReloadScene;
+                @ExitToMainMenu.started += instance.OnExitToMainMenu;
+                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
+                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
             }
         }
     }
@@ -431,6 +479,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_EndlessRunner_Jump;
     private readonly InputAction m_EndlessRunner_Slide;
     private readonly InputAction m_EndlessRunner_ReloadScene;
+    private readonly InputAction m_EndlessRunner_ExitToMainMenu;
     public struct EndlessRunnerActions
     {
         private @InputMaster m_Wrapper;
@@ -438,6 +487,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_EndlessRunner_Jump;
         public InputAction @Slide => m_Wrapper.m_EndlessRunner_Slide;
         public InputAction @ReloadScene => m_Wrapper.m_EndlessRunner_ReloadScene;
+        public InputAction @ExitToMainMenu => m_Wrapper.m_EndlessRunner_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_EndlessRunner; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -456,6 +506,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ReloadScene.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
+                @ExitToMainMenu.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
             }
             m_Wrapper.m_EndlessRunnerActionsCallbackInterface = instance;
             if (instance != null)
@@ -469,6 +522,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ReloadScene.started += instance.OnReloadScene;
                 @ReloadScene.performed += instance.OnReloadScene;
                 @ReloadScene.canceled += instance.OnReloadScene;
+                @ExitToMainMenu.started += instance.OnExitToMainMenu;
+                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
+                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
             }
         }
     }
@@ -491,11 +547,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnSpeedx5(InputAction.CallbackContext context);
         void OnSkipWave(InputAction.CallbackContext context);
         void OnReloadScene(InputAction.CallbackContext context);
+        void OnExitToMainMenu(InputAction.CallbackContext context);
     }
     public interface IEndlessRunnerActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
         void OnReloadScene(InputAction.CallbackContext context);
+        void OnExitToMainMenu(InputAction.CallbackContext context);
     }
 }

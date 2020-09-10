@@ -17,9 +17,11 @@ public class EndlessRunnerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        input.EndlessRunner.ReloadScene.performed += _ => sceneController.ReloadScene();
         input.EndlessRunner.Jump.performed += _ => playerController.OnJumpInput();
         input.EndlessRunner.Slide.performed += _ => playerController.OnSlideInput();
+
+        input.EndlessRunner.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
+        input.EndlessRunner.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
     }
 
     public void OnEnable() => input.EndlessRunner.Enable();
