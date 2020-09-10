@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e656d0ecfbc260469672a724171f1b9, type: 3}
   m_Name: Tower Slow
   m_EditorClassIdentifier: 
-  cost: 100
-  attackDamage: 2
+  cost: 75
+  attackDamage: 3
   attackRange: 3
   damageRadius: 0.2
   slowStrength: 0.7

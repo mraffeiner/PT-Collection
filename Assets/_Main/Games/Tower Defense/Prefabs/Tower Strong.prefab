@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.36320752
       objectReference: {fileID: 0}
+    - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Size.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261242375502966760, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3578429950934463492, guid: fcc130c30e7b8ef41b5d1ead27de731a, type: 3}
       propertyPath: m_Name
       value: Tower Strong

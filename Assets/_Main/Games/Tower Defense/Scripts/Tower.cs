@@ -39,7 +39,7 @@ public class Tower : MonoBehaviour
         enemiesInRange = new List<Enemy>();
         rangeTrigger.radius = stats.AttackRange;
 
-        towerTooltip = GameObject.Find("World Canvas").transform.Find("Tower Tooltip").gameObject;
+        towerTooltip = GameObject.Find("Tower Slot Canvas").transform.Find("Tower Tooltip").gameObject;
 
         animator.SetTrigger("Placement");
         StartCoroutine(ShootLoop());

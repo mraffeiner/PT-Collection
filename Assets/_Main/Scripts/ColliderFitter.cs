@@ -3,19 +3,16 @@
 [RequireComponent(typeof(BoxCollider2D), typeof(SpriteRenderer))]
 public class ColliderFitter : MonoBehaviour
 {
+    [SerializeField] private BoxCollider2D boxCollider = null;
+    [SerializeField] private SpriteRenderer spriteRenderer = null;
+
     [Tooltip("Offset the size of the collider by this value")]
     [SerializeField] private float padding = -.1f;
 
-    private BoxCollider2D boxCollider;
-    private SpriteRenderer spriteRenderer;
+    private void Awake() => ApplyFit();
 
-    private void Awake()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start()
+    [ContextMenu("Apply Fit")]
+    private void ApplyFit()
     {
         var newSize = Vector2.one;
 

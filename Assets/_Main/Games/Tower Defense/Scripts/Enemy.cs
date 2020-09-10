@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
     {
         GetComponent<AIDestinationSetter>().target = GameObject.Find("Core").transform;
         aiPath = GetComponent<AIPath>();
+
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Tower Strong
   m_EditorClassIdentifier: 
   cost: 50
-  attackRange: 5
   attackDamage: 30
+  attackRange: 5
   damageRadius: 0
   slowStrength: 0
-  attacksPerSecond: 1
-  projectileColor: {r: 1, g: 0.39049864, b: 0.36320752, a: 1}
+  slowDuration: 0
+  attacksPerSecond: 1.2
   projectileSpeed: 10
+  projectileColor: {r: 1, g: 0.39049864, b: 0.36320752, a: 1}
