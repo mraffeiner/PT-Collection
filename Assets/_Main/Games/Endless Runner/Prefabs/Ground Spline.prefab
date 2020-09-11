@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1329163988380291200}
   - component: {fileID: 9031189068980266648}
   m_Layer: 9
-  m_Name: Ground
+  m_Name: GroundSpriteShape
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

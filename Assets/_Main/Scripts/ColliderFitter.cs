@@ -12,7 +12,7 @@ public class ColliderFitter : MonoBehaviour
     private void Awake() => ApplyFit();
 
     [ContextMenu("Apply Fit")]
-    private void ApplyFit()
+    public void ApplyFit()
     {
         var newSize = Vector2.one;
 

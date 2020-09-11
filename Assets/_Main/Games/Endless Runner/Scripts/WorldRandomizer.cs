@@ -4,6 +4,8 @@ public class WorldRandomizer : MonoBehaviour
 {
     [SerializeField] private int worldSeed = 13;
 
+    public int WorldSeed => worldSeed;
+
     private System.Random random;
 
     public float Value => (float)random.NextDouble();

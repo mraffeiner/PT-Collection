@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake() => endlessRunnerInput = FindObjectOfType<EndlessRunnerInputHandler>();
 
-    private void Start() => endlessRunnerInput.enabled = true;
+    private void Start() => endlessRunnerInput.SwitchToGameplay();
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -18,8 +18,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Lose()
     {
-        endlessRunnerInput.enabled = false;
         gameOverScreen.SetActive(true);
+        endlessRunnerInput.SwitchToUI();
+
         gameObject.SetActive(false);
     }
 }

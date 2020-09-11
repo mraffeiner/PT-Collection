@@ -1,53 +1,27 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ObstacleSpawner : ObjectPoolBase
+public class ObstacleSpawner : PooledObjectSpawnerBase
 {
     [SerializeField] private ObstacleSpawnSettings obstacleSpawnSettings = null;
 
-    private GroundSpawner groundSpawner;
-    private List<GameObject> activeObstacles = new List<GameObject>();
-
-    private void Awake() => groundSpawner = FindObjectOfType<GroundSpawner>();
-
-    private void OnEnable()
-    {
-        groundSpawner.OnWorldRecenter += RecenterObstacles;
-        groundSpawner.OnNodeAdded += AddObstaclesToSegment;
-        groundSpawner.OnNodeRemoved += RemoveObstaclesFromSegment;
-    }
-
-    private void OnDisable()
-    {
-        groundSpawner.OnWorldRecenter -= RecenterObstacles;
-        groundSpawner.OnNodeAdded -= AddObstaclesToSegment;
-        groundSpawner.OnNodeRemoved -= RemoveObstaclesFromSegment;
-    }
-
-    private void RecenterObstacles(float xShift) => activeObstacles.ForEach(x => x.transform.position -= Vector3.right * xShift);
-
-    private void AddObstaclesToSegment(Vector3 segmentStart, Vector3 segmentEnd)
+    protected override void RedecoratePooledObject(GameObject pooledObject, Vector3 segmentStart, Vector3 segmentEnd)
     {
         var segmentCenter = segmentStart + .5f * (segmentEnd - segmentStart);
 
-        var obstacle = GetInactiveFromPool();
-        var obstacleRenderer = obstacle.GetComponent<SpriteRenderer>();
+        var obstacle = pooledObject;
+        var obstacleRenderer = obstacle.GetComponentInChildren<SpriteRenderer>();
+        var obstacleColliderFitter = obstacle.GetComponentInChildren<ColliderFitter>();
 
-        //TODO: Randomize based on spawn settings
-        obstacleRenderer.size = new Vector2(2f, 2f);
-        obstacle.transform.position = segmentCenter;
+        float xSize, ySize, distanceFromGround = 0f;
 
-        obstacle.SetActive(true);
-        activeObstacles.Add(obstacle);
-    }
+        // TODO: Safeguard randomness to ensure the obstacle can be cleared
 
-    private void RemoveObstaclesFromSegment(Vector3 segmentEnd)
-    {
-        var obstaclesToRemove = activeObstacles.FindAll(x => x.transform.position.x < segmentEnd.x);
-        obstaclesToRemove.ForEach(x =>
-        {
-            x.SetActive(false);
-            activeObstacles.Remove(x);
-        });
+        xSize = randomizer.Range(obstacleSpawnSettings.WidthMin, obstacleSpawnSettings.WidthMax);
+        ySize = randomizer.Range(obstacleSpawnSettings.HeightMin, obstacleSpawnSettings.HeightMax);
+        distanceFromGround = randomizer.Range(obstacleSpawnSettings.DistanceFromGroundMin, obstacleSpawnSettings.DistanceFromGroundMax);
+
+        obstacleRenderer.size = new Vector2(xSize, ySize);
+        obstacleColliderFitter.ApplyFit();
+        obstacle.transform.localPosition = segmentCenter + Vector3.up * distanceFromGround;
     }
 }

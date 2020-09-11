@@ -22,6 +22,9 @@ public class EndlessRunnerInputHandler : MonoBehaviour
 
         input.EndlessRunner.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
         input.EndlessRunner.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
+
+        input.UI.Confirm.performed += _ => sceneController.ReloadCurrentScene();
+        input.UI.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
     }
 
     public void OnEnable() => input.EndlessRunner.Enable();
@@ -30,4 +33,16 @@ public class EndlessRunnerInputHandler : MonoBehaviour
 
     //TODO: Remove this when there's a master script for input
     private void OnDestroy() => input.Dispose();
+
+    public void SwitchToGameplay()
+    {
+        input.UI.Disable();
+        input.EndlessRunner.Enable();
+    }
+
+    public void SwitchToUI()
+    {
+        input.EndlessRunner.Disable();
+        input.UI.Enable();
+    }
 }
