@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Scriptable Object/Tower Stats")]
 public class TowerStats : ScriptableObject
 {
     [SerializeField] private int cost = 50;

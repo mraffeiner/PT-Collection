@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Scriptable Object/Enemy Stats")]
 public class EnemyStats : ScriptableObject
 {
     [SerializeField] private Vector2 scale = Vector2.one;

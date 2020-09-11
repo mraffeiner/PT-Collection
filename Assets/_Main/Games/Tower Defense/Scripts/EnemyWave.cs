@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Scriptable Object/Enemy Wave")]
 public class EnemyWave : ScriptableObject
 {
     public int waveSize;
