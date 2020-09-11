@@ -6,7 +6,7 @@ public class PointTracker : MonoBehaviour
 {
     private Transform player;
     private TextMeshProUGUI textMesh;
-    private int pointsTotal = 0;
+    private int pointsPerRecenter = 0;
     private int pointsBackup = 0;
 
     private void Awake()
@@ -18,10 +18,10 @@ public class PointTracker : MonoBehaviour
     private void Update()
     {
         // Small hack to prevent point reset when the player gets recentered to world origin
-        if (player.transform.position.x < pointsTotal)
-            pointsBackup = pointsTotal;
+        if (player.transform.position.x < pointsPerRecenter)
+            pointsBackup += pointsPerRecenter;
 
-        pointsTotal = (int)player.transform.position.x;
-        textMesh.text = (pointsBackup + pointsTotal).ToString();
+        pointsPerRecenter = (int)player.transform.position.x;
+        textMesh.text = (pointsBackup + pointsPerRecenter).ToString();
     }
 }

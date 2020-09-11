@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthMin: 2
   widthMax: 5
-  heightMin: 2
+  heightMin: 2.5
   heightMax: 5
   distanceFromGroundMin: 3
   distanceFromGroundMax: 10
