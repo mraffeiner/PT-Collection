@@ -28,7 +28,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         rangeLight.pointLightInnerRadius = 0f;
-        rangeLight.pointLightOuterRadius = stats.AttackRange + 1f;
+        rangeLight.pointLightOuterRadius = stats.AttackRange;
 
         if (isDummy)
         {

@@ -12,13 +12,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slideTimingTolerance = .2f;
 
     private Rigidbody2D body;
+    private Animator animator;
+    private Transform sprite;
     private Vector2 newVelocity;
     private bool grounded = false;
     private Vector2 groundNormal;
     private Vector2 groundForward;
-    private Coroutine slideRecovery;
 
-    private void Awake() => body = GetComponentInChildren<Rigidbody2D>();
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        sprite = transform.Find("Sprite");
+    }
 
     private void Update()
     {
@@ -29,9 +35,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (grounded)
-        {
             newVelocity = groundForward * moveSpeed;
-        }
         else
             newVelocity = new Vector2(moveSpeed, body.velocity.y);
 
@@ -72,14 +76,18 @@ public class PlayerController : MonoBehaviour
         grounded = false;
     }
 
-    private void Slide() => slideRecovery = StartCoroutine(RecoverFromSlide());
+    private void Slide()
+    {
+        animator.SetBool("Sliding", true);
+        StartCoroutine(Sliding());
+    }
 
     private IEnumerator ExecuteGroundActionWithTimingTolerance(Action GroundedAction, float timingTolerance)
     {
         var timer = 0f;
         while (timer < timingTolerance)
         {
-            if (grounded && slideRecovery == null)
+            if (grounded && !animator.GetBool("Sliding"))
             {
                 GroundedAction();
                 yield break;
@@ -90,18 +98,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator RecoverFromSlide()
+    private IEnumerator Sliding()
     {
         var timer = 0f;
         while (timer < slideDuration)
         {
             timer += Time.deltaTime;
-            transform.localEulerAngles = Vector3.back * Vector2.Angle(Vector2.up, groundForward);
-
+            sprite.localEulerAngles = Vector3.back * Vector2.Angle(Vector2.up, groundForward);
             yield return null;
         }
 
-        transform.rotation = Quaternion.identity;
-        slideRecovery = null;
+        animator.SetBool("Sliding", false);
+        sprite.rotation = Quaternion.identity;
     }
 }
