@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class PlayerVision : MonoBehaviour
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private Light2D vision = null;
-    [SerializeField] private float fadeSpeed = 1f;
-    [SerializeField] private float minRadius = 5f;
-    [SerializeField] private float maxRadius = 30f;
-
-    private void FixedUpdate()
+    public class PlayerVision : MonoBehaviour
     {
-        if (vision.pointLightOuterRadius > minRadius)
-            vision.pointLightOuterRadius -= fadeSpeed * Time.deltaTime;
-    }
+        [SerializeField] private Light2D vision = null;
+        [SerializeField] private float fadeSpeed = 1f;
+        [SerializeField] private float minRadius = 5f;
+        [SerializeField] private float maxRadius = 30f;
 
-    public void IncreaseVision(float value) => vision.pointLightOuterRadius = Mathf.Clamp(vision.pointLightOuterRadius + value, minRadius, maxRadius);
+        private void FixedUpdate()
+        {
+            if (vision.pointLightOuterRadius > minRadius)
+                vision.pointLightOuterRadius -= fadeSpeed * Time.deltaTime;
+        }
+
+        public void IncreaseVision(float value) => vision.pointLightOuterRadius = Mathf.Clamp(vision.pointLightOuterRadius + value, minRadius, maxRadius);
+    }
 }

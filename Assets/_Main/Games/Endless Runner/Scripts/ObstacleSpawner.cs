@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 
-public class ObstacleSpawner : PooledObjectSpawnerBase
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private ObstacleSpawnSettings obstacleSpawnSettings = null;
-
-    protected override void RedecoratePooledObject(GameObject pooledObject, Vector3 segmentStart, Vector3 segmentEnd)
+    public class ObstacleSpawner : PooledObjectSpawnerBase
     {
-        var segmentCenter = segmentStart + .5f * (segmentEnd - segmentStart);
+        [SerializeField] private ObstacleSpawnSettings obstacleSpawnSettings = null;
 
-        var obstacle = pooledObject;
-        var obstacleRenderer = obstacle.GetComponentInChildren<SpriteRenderer>();
-        var obstacleColliderFitter = obstacle.GetComponentInChildren<ColliderFitter>();
+        protected override void RedecoratePooledObject(GameObject pooledObject, Vector3 segmentStart, Vector3 segmentEnd)
+        {
+            var segmentCenter = segmentStart + .5f * (segmentEnd - segmentStart);
 
-        float xSize, ySize, distanceFromGround = 0f;
+            var obstacle = pooledObject;
+            var obstacleRenderer = obstacle.GetComponentInChildren<SpriteRenderer>();
+            var obstacleColliderFitter = obstacle.GetComponentInChildren<ColliderFitter>();
 
-        // TODO: Safeguard randomness to ensure the obstacle can be cleared
+            float xSize, ySize, distanceFromGround = 0f;
 
-        xSize = randomizer.Range(obstacleSpawnSettings.WidthMin, obstacleSpawnSettings.WidthMax);
-        ySize = randomizer.Range(obstacleSpawnSettings.HeightMin, obstacleSpawnSettings.HeightMax);
-        distanceFromGround = randomizer.Range(obstacleSpawnSettings.DistanceFromGroundMin, obstacleSpawnSettings.DistanceFromGroundMax);
+            // TODO: Safeguard randomness to ensure the obstacle can be cleared
 
-        obstacleRenderer.size = new Vector2(xSize, ySize);
-        obstacleColliderFitter.ApplyFit();
-        obstacle.transform.localPosition = segmentCenter + Vector3.up * distanceFromGround;
+            xSize = randomizer.Range(obstacleSpawnSettings.WidthMin, obstacleSpawnSettings.WidthMax);
+            ySize = randomizer.Range(obstacleSpawnSettings.HeightMin, obstacleSpawnSettings.HeightMax);
+            distanceFromGround = randomizer.Range(obstacleSpawnSettings.DistanceFromGroundMin, obstacleSpawnSettings.DistanceFromGroundMax);
+
+            obstacleRenderer.size = new Vector2(xSize, ySize);
+            obstacleColliderFitter.ApplyFit();
+            obstacle.transform.localPosition = segmentCenter + Vector3.up * distanceFromGround;
+        }
     }
 }

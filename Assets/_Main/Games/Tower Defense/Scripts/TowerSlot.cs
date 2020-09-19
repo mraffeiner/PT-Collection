@@ -3,52 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerSlot : MonoBehaviour
+namespace PTCollection.TowerDefense
 {
-    public static event Action<Tower> BuildTower;
-
-    [SerializeField] private List<GameObject> towerPrefabs = null;
-
-    public static Tower SelectedTowerDummy { get; set; }
-
-    private TowerCurrency currency;
-    private Image image;
-
-    private void Awake()
+    public class TowerSlot : MonoBehaviour
     {
-        currency = FindObjectOfType<TowerCurrency>();
-        image = GetComponentInChildren<Image>();
-    }
+        public static event Action<Tower> BuildTower;
 
-    public void OnPointerEnter()
-    {
-        if (SelectedTowerDummy == null)
-            return;
+        [SerializeField] private List<GameObject> towerPrefabs = null;
 
-        SelectedTowerDummy.transform.position = transform.position;
-    }
+        public static Tower SelectedTowerDummy { get; set; }
 
-    public void OnPointerExit()
-    {
-        if (SelectedTowerDummy == null)
-            return;
+        private TowerCurrency currency;
+        private Image image;
 
-        SelectedTowerDummy.transform.localPosition = Vector3.zero;
-    }
+        private void Awake()
+        {
+            currency = FindObjectOfType<TowerCurrency>();
+            image = GetComponentInChildren<Image>();
+        }
 
-    public void OnPointerClick()
-    {
-        if (SelectedTowerDummy == null || SelectedTowerDummy.Cost > currency.TotalLights)
-            return;
+        public void OnPointerEnter()
+        {
+            if (SelectedTowerDummy == null)
+                return;
 
-        SelectedTowerDummy.transform.localPosition = Vector3.zero;
+            SelectedTowerDummy.transform.position = transform.position;
+        }
 
-        var towerObject = Instantiate(towerPrefabs.Find(x => x.name == SelectedTowerDummy.name), transform.parent);
-        var towerComponent = towerObject.GetComponent<Tower>();
+        public void OnPointerExit()
+        {
+            if (SelectedTowerDummy == null)
+                return;
 
-        towerObject.transform.position = transform.position;
+            SelectedTowerDummy.transform.localPosition = Vector3.zero;
+        }
 
-        BuildTower?.Invoke(towerComponent);
-        gameObject.SetActive(false);
+        public void OnPointerClick()
+        {
+            if (SelectedTowerDummy == null || SelectedTowerDummy.Cost > currency.TotalLights)
+                return;
+
+            SelectedTowerDummy.transform.localPosition = Vector3.zero;
+
+            var towerObject = Instantiate(towerPrefabs.Find(x => x.name == SelectedTowerDummy.name), transform.parent);
+            var towerComponent = towerObject.GetComponent<Tower>();
+
+            towerObject.transform.position = transform.position;
+
+            BuildTower?.Invoke(towerComponent);
+            gameObject.SetActive(false);
+        }
     }
 }

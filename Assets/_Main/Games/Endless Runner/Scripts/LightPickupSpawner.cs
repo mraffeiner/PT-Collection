@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-public class LightPickupSpawner : PooledObjectSpawnerBase
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private Vector3 spawnOffset = new Vector3(0f, 5f, 0f);
-
-    protected override void RedecoratePooledObject(GameObject pooledObject, Vector3 segmentStart, Vector3 segmentEnd)
+    public class LightPickupSpawner : PooledObjectSpawnerBase
     {
-        var lightPickup = pooledObject;
+        [SerializeField] private Vector3 spawnOffset = new Vector3(0f, 5f, 0f);
 
-        lightPickup.transform.localPosition = segmentStart + spawnOffset;
+        protected override void RedecoratePooledObject(GameObject pooledObject, Vector3 segmentStart, Vector3 segmentEnd)
+        {
+            var lightPickup = pooledObject;
+
+            lightPickup.transform.localPosition = segmentStart + spawnOffset;
+        }
     }
 }

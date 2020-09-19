@@ -303,6 +303,134 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ]
         },
         {
+            ""name"": ""Twin Stick Shooter"",
+            ""id"": ""643edcef-f905-42d9-ade8-60ce8c3d3a72"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""83b20b9b-ab1e-4574-8ded-dc4e0d3404e5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""7cfc4a68-6f78-47fe-8f83-62b220769bda"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reload Scene"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf8d518f-68ae-4a65-97ee-e15c7178b2e8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit To Main Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""9bc8f101-00ca-42af-8c1c-d91aa30ca82d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ba2112d4-d002-434a-ae34-690ed4f0d458"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d8861874-0573-4473-bede-a93ebe3437cd"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""00bfbec8-10dd-4bbd-9cc8-7e32cd6f37c2"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""438e56ea-c761-4297-8863-348a61ac89ab"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6e49aa4b-053c-4048-9f16-a34fc7ff28d7"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08c1864c-e699-4bd3-b4cb-e8a2feef7896"",
+                    ""path"": ""*/{Point}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93c894a8-d5f0-43ca-b287-922c59ba6bc1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Exit To Main Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c73e366-4b41-4ca2-bfb1-d43a061fe0a5"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Reload Scene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""0cb770c9-8d3a-4b5e-a127-cb17c475b30a"",
             ""actions"": [
@@ -406,6 +534,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_EndlessRunner_Slide = m_EndlessRunner.FindAction("Slide", throwIfNotFound: true);
         m_EndlessRunner_ReloadScene = m_EndlessRunner.FindAction("Reload Scene", throwIfNotFound: true);
         m_EndlessRunner_ExitToMainMenu = m_EndlessRunner.FindAction("Exit To Main Menu", throwIfNotFound: true);
+        // Twin Stick Shooter
+        m_TwinStickShooter = asset.FindActionMap("Twin Stick Shooter", throwIfNotFound: true);
+        m_TwinStickShooter_Move = m_TwinStickShooter.FindAction("Move", throwIfNotFound: true);
+        m_TwinStickShooter_Aim = m_TwinStickShooter.FindAction("Aim", throwIfNotFound: true);
+        m_TwinStickShooter_ReloadScene = m_TwinStickShooter.FindAction("Reload Scene", throwIfNotFound: true);
+        m_TwinStickShooter_ExitToMainMenu = m_TwinStickShooter.FindAction("Exit To Main Menu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Confirm = m_UI.FindAction("Confirm", throwIfNotFound: true);
@@ -602,6 +736,63 @@ public class @InputMaster : IInputActionCollection, IDisposable
     }
     public EndlessRunnerActions @EndlessRunner => new EndlessRunnerActions(this);
 
+    // Twin Stick Shooter
+    private readonly InputActionMap m_TwinStickShooter;
+    private ITwinStickShooterActions m_TwinStickShooterActionsCallbackInterface;
+    private readonly InputAction m_TwinStickShooter_Move;
+    private readonly InputAction m_TwinStickShooter_Aim;
+    private readonly InputAction m_TwinStickShooter_ReloadScene;
+    private readonly InputAction m_TwinStickShooter_ExitToMainMenu;
+    public struct TwinStickShooterActions
+    {
+        private @InputMaster m_Wrapper;
+        public TwinStickShooterActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_TwinStickShooter_Move;
+        public InputAction @Aim => m_Wrapper.m_TwinStickShooter_Aim;
+        public InputAction @ReloadScene => m_Wrapper.m_TwinStickShooter_ReloadScene;
+        public InputAction @ExitToMainMenu => m_Wrapper.m_TwinStickShooter_ExitToMainMenu;
+        public InputActionMap Get() { return m_Wrapper.m_TwinStickShooter; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TwinStickShooterActions set) { return set.Get(); }
+        public void SetCallbacks(ITwinStickShooterActions instance)
+        {
+            if (m_Wrapper.m_TwinStickShooterActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnMove;
+                @Aim.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
+                @ReloadScene.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
+                @ExitToMainMenu.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
+            }
+            m_Wrapper.m_TwinStickShooterActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @ReloadScene.started += instance.OnReloadScene;
+                @ReloadScene.performed += instance.OnReloadScene;
+                @ReloadScene.canceled += instance.OnReloadScene;
+                @ExitToMainMenu.started += instance.OnExitToMainMenu;
+                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
+                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
+            }
+        }
+    }
+    public TwinStickShooterActions @TwinStickShooter => new TwinStickShooterActions(this);
+
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
@@ -666,6 +857,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnJump(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
+        void OnReloadScene(InputAction.CallbackContext context);
+        void OnExitToMainMenu(InputAction.CallbackContext context);
+    }
+    public interface ITwinStickShooterActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
         void OnReloadScene(InputAction.CallbackContext context);
         void OnExitToMainMenu(InputAction.CallbackContext context);
     }

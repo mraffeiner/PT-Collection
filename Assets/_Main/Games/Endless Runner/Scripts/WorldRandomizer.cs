@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class WorldRandomizer : MonoBehaviour
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private int worldSeed = 13;
+    public class WorldRandomizer : MonoBehaviour
+    {
+        [SerializeField] private int worldSeed = 13;
 
-    public int WorldSeed => worldSeed;
+        public int WorldSeed => worldSeed;
 
-    private System.Random random;
+        private System.Random random;
 
-    public float Value => (float)random.NextDouble();
+        public float Value => (float)random.NextDouble();
 
-    private void Awake() => random = new System.Random(worldSeed);
+        private void Awake() => random = new System.Random(worldSeed);
 
-    public float Range(float min, float max) => (min + Value * (max - min));
+        public float Range(float min, float max) => (min + Value * (max - min));
+    }
 }

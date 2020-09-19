@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 
-public class ProjectilePool : ObjectPoolBase
+namespace PTCollection.TowerDefense
 {
-    private void OnEnable() => Tower.Fired += OnTowerFired;
-
-    private void OnDisable() => Tower.Fired -= OnTowerFired;
-
-    private void OnTowerFired(TowerStats stats, Transform spawn, Enemy target)
+    public class ProjectilePool : ObjectPoolBase
     {
-        var projectileObject = GetInactiveFromPool();
-        var projectileComponent = projectileObject.GetComponent<Projectile>();
+        private void OnEnable() => Tower.Fired += OnTowerFired;
 
-        projectileObject.transform.position = spawn.position;
-        projectileObject.transform.rotation = spawn.rotation;
+        private void OnDisable() => Tower.Fired -= OnTowerFired;
 
-        projectileComponent.SpriteRenderer.color = stats.ProjectileColor;
-        projectileComponent.Target = target;
+        private void OnTowerFired(TowerStats stats, Transform spawn, Enemy target)
+        {
+            var projectileObject = GetInactiveFromPool();
+            var projectileComponent = projectileObject.GetComponent<Projectile>();
 
-        projectileComponent.Stats = stats;
+            projectileObject.transform.position = spawn.position;
+            projectileObject.transform.rotation = spawn.rotation;
 
-        projectileObject.SetActive(true);
+            projectileComponent.SpriteRenderer.color = stats.ProjectileColor;
+            projectileComponent.Target = target;
+
+            projectileComponent.Stats = stats;
+
+            projectileObject.SetActive(true);
+        }
     }
 }

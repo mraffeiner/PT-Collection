@@ -1,33 +1,36 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class TowerCurrency : MonoBehaviour
+namespace PTCollection.TowerDefense
 {
-    [SerializeField] private TextMeshProUGUI currencyText = null;
-    [SerializeField] private int startAmount = 20;
-
-    private int totalLights;
-    public int TotalLights
+    public class TowerCurrency : MonoBehaviour
     {
-        get => totalLights; private set
+        [SerializeField] private TextMeshProUGUI currencyText = null;
+        [SerializeField] private int startAmount = 20;
+
+        private int totalLights;
+        public int TotalLights
         {
-            totalLights = value;
-            currencyText.text = totalLights.ToString();
+            get => totalLights; private set
+            {
+                totalLights = value;
+                currencyText.text = totalLights.ToString();
+            }
         }
-    }
 
-    private void Start() => TotalLights = startAmount;
-    private void OnEnable()
-    {
-        Enemy.Died += OnEnemyDied;
-        TowerSlot.BuildTower += OnTowerBuilt;
-    }
-    private void OnDisable()
-    {
-        Enemy.Died -= OnEnemyDied;
-        TowerSlot.BuildTower -= OnTowerBuilt;
-    }
-    private void OnEnemyDied(Enemy enemy) => TotalLights += enemy.Stats.Value;
+        private void Start() => TotalLights = startAmount;
+        private void OnEnable()
+        {
+            Enemy.Died += OnEnemyDied;
+            TowerSlot.BuildTower += OnTowerBuilt;
+        }
+        private void OnDisable()
+        {
+            Enemy.Died -= OnEnemyDied;
+            TowerSlot.BuildTower -= OnTowerBuilt;
+        }
+        private void OnEnemyDied(Enemy enemy) => TotalLights += enemy.Stats.Value;
 
-    private void OnTowerBuilt(Tower tower) => TotalLights -= tower.Cost;
+        private void OnTowerBuilt(Tower tower) => TotalLights -= tower.Cost;
+    }
 }

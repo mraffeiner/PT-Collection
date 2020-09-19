@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private GameObject gameOverScreen = null;
-
-    private EndlessRunnerInputHandler endlessRunnerInput;
-
-    private void Awake() => endlessRunnerInput = FindObjectOfType<EndlessRunnerInputHandler>();
-
-    private void Start() => endlessRunnerInput.SwitchToGameplay();
-
-    private void OnCollisionEnter2D(Collision2D other)
+    public class PlayerHealth : MonoBehaviour
     {
-        if (other.collider.tag == "Enemy" || other.collider.tag == "Obstacle")
-            Lose();
-    }
+        [SerializeField] private GameObject gameOverScreen = null;
 
-    public void Lose()
-    {
-        gameOverScreen.SetActive(true);
-        endlessRunnerInput.SwitchToUI();
+        private InputHandler endlessRunnerInput;
 
-        gameObject.SetActive(false);
+        private void Awake() => endlessRunnerInput = FindObjectOfType<InputHandler>();
+
+        private void Start() => endlessRunnerInput.SwitchToGameplay();
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.collider.tag == "Enemy" || other.collider.tag == "Obstacle")
+                Lose();
+        }
+
+        public void Lose()
+        {
+            gameOverScreen.SetActive(true);
+            endlessRunnerInput.SwitchToUI();
+
+            gameObject.SetActive(false);
+        }
     }
 }

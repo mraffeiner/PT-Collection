@@ -1,27 +1,30 @@
 ﻿using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class PointTracker : MonoBehaviour
+namespace PTCollection.EndlessRunner
 {
-    private Transform player;
-    private TextMeshProUGUI textMesh;
-    private int pointsPerRecenter = 0;
-    private int pointsBackup = 0;
-
-    private void Awake()
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    public class PointTracker : MonoBehaviour
     {
-        player = GameObject.FindWithTag("Player").transform;
-        textMesh = GetComponent<TextMeshProUGUI>();
-    }
+        private Transform player;
+        private TextMeshProUGUI textMesh;
+        private int pointsPerRecenter = 0;
+        private int pointsBackup = 0;
 
-    private void Update()
-    {
-        // Small hack to prevent point reset when the player gets recentered to world origin
-        if (player.transform.position.x < pointsPerRecenter)
-            pointsBackup += pointsPerRecenter;
+        private void Awake()
+        {
+            player = GameObject.FindWithTag("Player").transform;
+            textMesh = GetComponent<TextMeshProUGUI>();
+        }
 
-        pointsPerRecenter = (int)player.transform.position.x;
-        textMesh.text = (pointsBackup + pointsPerRecenter).ToString();
+        private void Update()
+        {
+            // Small hack to prevent point reset when the player gets recentered to world origin
+            if (player.transform.position.x < pointsPerRecenter)
+                pointsBackup += pointsPerRecenter;
+
+            pointsPerRecenter = (int)player.transform.position.x;
+            textMesh.text = (pointsBackup + pointsPerRecenter).ToString();
+        }
     }
 }

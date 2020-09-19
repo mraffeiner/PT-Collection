@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-public class LightPickup : MonoBehaviour
+namespace PTCollection.EndlessRunner
 {
-    [SerializeField] private float lightValue = 10;
-
-    private PlayerVision playerVision;
-
-    private void Awake() => playerVision = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerVision>();
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class LightPickup : MonoBehaviour
     {
-        if (other.tag == "Player")
+        [SerializeField] private float lightValue = 10;
+
+        private PlayerVision playerVision;
+
+        private void Awake() => playerVision = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerVision>();
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            playerVision.IncreaseVision(lightValue);
-            transform.parent.gameObject.SetActive(false);
+            if (other.tag == "Player")
+            {
+                playerVision.IncreaseVision(lightValue);
+                transform.parent.gameObject.SetActive(false);
+            }
         }
     }
 }
