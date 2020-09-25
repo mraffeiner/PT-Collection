@@ -22,6 +22,7 @@ namespace PTCollection.TwinStickShooter
             input.TwinStickShooter.Move.performed += _ => playerController.OnMoveInput(_);
             input.TwinStickShooter.Move.canceled += _ => playerController.OnMoveInput(_);
             input.TwinStickShooter.Aim.performed += _ => playerController.OnAimInput(_);
+            input.TwinStickShooter.Shoot.performed += _ => playerController.OnShootInput();
 
             input.TwinStickShooter.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
             input.TwinStickShooter.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");

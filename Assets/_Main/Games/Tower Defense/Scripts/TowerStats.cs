@@ -2,7 +2,7 @@
 
 namespace PTCollection.TowerDefense
 {
-    [CreateAssetMenu(menuName = "Scriptable Object/Tower Stats")]
+    [CreateAssetMenu(menuName = "Scriptable Object/Tower Defense/Tower Stats")]
     public class TowerStats : ScriptableObject
     {
         [SerializeField] private int cost = 50;

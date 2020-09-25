@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PTCollection.EndlessRunner
 {
-    [CreateAssetMenu(menuName = "Scriptable Object/Obstacle Spawn Settings")]
+    [CreateAssetMenu(menuName = "Scriptable Object/Endless Runner/Obstacle Spawn Settings")]
     public class ObstacleSpawnSettings : ScriptableObject
     {
         [Range(2f, 10f)] [SerializeField] private float widthMin = 2f;

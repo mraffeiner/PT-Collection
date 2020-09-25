@@ -16,7 +16,8 @@ namespace PTCollection.TwinStickShooter
         private CircleCollider2D hitbox;
         private int health = 0;
         private float hitRecoveryTimer = 0f;
-        private bool invincible = false;
+        private int invincibleLayer;
+        private int playerLayer;
 
         private void Awake()
         {
@@ -27,6 +28,9 @@ namespace PTCollection.TwinStickShooter
 
         private void Start()
         {
+            invincibleLayer = LayerMask.NameToLayer("Invincible");
+            playerLayer = LayerMask.NameToLayer("Player");
+
             inputHandler.SwitchToGameplay();
             health = maxHealth;
             OnHealthChanged?.Invoke(health);
@@ -36,25 +40,25 @@ namespace PTCollection.TwinStickShooter
         {
             if (hitRecoveryTimer > 0f)
                 hitRecoveryTimer -= Time.deltaTime;
-            else if (!hitbox.enabled)
+            else if (gameObject.layer == invincibleLayer)
             {
                 animator.SetBool("Invincible", false);
-                hitbox.enabled = true;
+                gameObject.layer = playerLayer;
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.tag == "Enemy")
-                TakeDamage(1);
+            if (other.collider.tag == "Enemy")
+                TakeDamage(other.collider.GetComponent<Enemy>().Stats.AttackDamage);
         }
 
         private void TakeDamage(int value)
         {
-            if (value == 0 || invincible)
+            if (value == 0 || gameObject.layer == invincibleLayer)
                 return;
 
-            hitbox.enabled = false;
+            gameObject.layer = invincibleLayer;
             hitRecoveryTimer = hitRecoveryTime;
             animator.SetBool("Invincible", true);
 

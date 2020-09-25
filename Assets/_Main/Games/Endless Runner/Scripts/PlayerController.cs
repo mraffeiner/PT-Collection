@@ -6,6 +6,7 @@ namespace PTCollection.EndlessRunner
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Transform spriteTransform;
         [SerializeField] private LayerMask groundLayer = 0;
         [SerializeField] private float moveSpeed = 10f;
         [SerializeField] private float jumpStrength = 10f;
@@ -15,7 +16,6 @@ namespace PTCollection.EndlessRunner
 
         private Rigidbody2D body;
         private Animator animator;
-        private Transform sprite;
         private Vector2 newVelocity;
         private bool grounded = false;
         private Vector2 groundNormal;
@@ -25,7 +25,6 @@ namespace PTCollection.EndlessRunner
         {
             body = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
-            sprite = transform.Find("Sprite");
         }
 
         private void Update()
@@ -106,12 +105,12 @@ namespace PTCollection.EndlessRunner
             while (timer < slideDuration)
             {
                 timer += Time.deltaTime;
-                sprite.localEulerAngles = Vector3.back * Vector2.Angle(Vector2.up, groundForward);
+                spriteTransform.localEulerAngles = Vector3.back * Vector2.Angle(Vector2.up, groundForward);
                 yield return null;
             }
 
             animator.SetBool("Sliding", false);
-            sprite.rotation = Quaternion.identity;
+            spriteTransform.rotation = Quaternion.identity;
         }
     }
 }

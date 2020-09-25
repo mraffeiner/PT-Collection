@@ -323,6 +323,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""996e9ed8-5c81-4314-bdbc-104c66c256c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Reload Scene"",
                     ""type"": ""Button"",
                     ""id"": ""bf8d518f-68ae-4a65-97ee-e15c7178b2e8"",
@@ -425,6 +433,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""KBM"",
                     ""action"": ""Reload Scene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2afa7824-4e5c-417f-a720-356ea80099f9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6317a518-492c-4e1a-9c83-c9336f0f7c6a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -538,6 +568,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_TwinStickShooter = asset.FindActionMap("Twin Stick Shooter", throwIfNotFound: true);
         m_TwinStickShooter_Move = m_TwinStickShooter.FindAction("Move", throwIfNotFound: true);
         m_TwinStickShooter_Aim = m_TwinStickShooter.FindAction("Aim", throwIfNotFound: true);
+        m_TwinStickShooter_Shoot = m_TwinStickShooter.FindAction("Shoot", throwIfNotFound: true);
         m_TwinStickShooter_ReloadScene = m_TwinStickShooter.FindAction("Reload Scene", throwIfNotFound: true);
         m_TwinStickShooter_ExitToMainMenu = m_TwinStickShooter.FindAction("Exit To Main Menu", throwIfNotFound: true);
         // UI
@@ -741,6 +772,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private ITwinStickShooterActions m_TwinStickShooterActionsCallbackInterface;
     private readonly InputAction m_TwinStickShooter_Move;
     private readonly InputAction m_TwinStickShooter_Aim;
+    private readonly InputAction m_TwinStickShooter_Shoot;
     private readonly InputAction m_TwinStickShooter_ReloadScene;
     private readonly InputAction m_TwinStickShooter_ExitToMainMenu;
     public struct TwinStickShooterActions
@@ -749,6 +781,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public TwinStickShooterActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_TwinStickShooter_Move;
         public InputAction @Aim => m_Wrapper.m_TwinStickShooter_Aim;
+        public InputAction @Shoot => m_Wrapper.m_TwinStickShooter_Shoot;
         public InputAction @ReloadScene => m_Wrapper.m_TwinStickShooter_ReloadScene;
         public InputAction @ExitToMainMenu => m_Wrapper.m_TwinStickShooter_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_TwinStickShooter; }
@@ -766,6 +799,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Aim.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnAim;
+                @Shoot.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
                 @ReloadScene.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
                 @ReloadScene.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
@@ -782,6 +818,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
                 @ReloadScene.started += instance.OnReloadScene;
                 @ReloadScene.performed += instance.OnReloadScene;
                 @ReloadScene.canceled += instance.OnReloadScene;
@@ -864,6 +903,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
         void OnReloadScene(InputAction.CallbackContext context);
         void OnExitToMainMenu(InputAction.CallbackContext context);
     }

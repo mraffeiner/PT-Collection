@@ -2,7 +2,7 @@
 
 namespace PTCollection.TowerDefense
 {
-    [CreateAssetMenu(menuName = "Scriptable Object/Enemy Wave")]
+    [CreateAssetMenu(menuName = "Scriptable Object/Tower Defense/Enemy Wave")]
     public class EnemyWave : ScriptableObject
     {
         public int waveSize;

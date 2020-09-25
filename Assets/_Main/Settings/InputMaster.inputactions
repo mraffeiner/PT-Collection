@@ -310,6 +310,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "996e9ed8-5c81-4314-bdbc-104c66c256c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Reload Scene",
                     "type": "Button",
                     "id": "bf8d518f-68ae-4a65-97ee-e15c7178b2e8",
@@ -412,6 +420,28 @@
                     "processors": "",
                     "groups": "KBM",
                     "action": "Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2afa7824-4e5c-417f-a720-356ea80099f9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6317a518-492c-4e1a-9c83-c9336f0f7c6a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

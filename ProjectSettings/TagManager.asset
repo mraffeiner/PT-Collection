@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Obstacle
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - 
   - Walls
   - Ground
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Invincible
   - 
   - 
   - 
@@ -50,10 +51,7 @@ TagManager:
   - name: Walls
     uniqueID: 367276691
     locked: 0
-  - name: Enemies
-    uniqueID: 1550305471
-    locked: 0
-  - name: Player
+  - name: Character
     uniqueID: 4289814209
     locked: 0
   - name: Towers

@@ -2,7 +2,7 @@
 
 namespace PTCollection.TowerDefense
 {
-    [CreateAssetMenu(menuName = "Scriptable Object/Enemy Stats")]
+    [CreateAssetMenu(menuName = "Scriptable Object/Tower Defense/Enemy Stats")]
     public class EnemyStats : ScriptableObject
     {
         [SerializeField] private Vector2 scale = Vector2.one;

@@ -9,6 +9,7 @@ namespace PTCollection.TwinStickShooter
         private void Awake() => playerHealth = FindObjectOfType<PlayerHealth>();
 
         private void OnEnable() => playerHealth.OnHealthChanged += UpdateHealth;
+
         private void Disable() => playerHealth.OnHealthChanged -= UpdateHealth;
 
         private void UpdateHealth(int newHealth)

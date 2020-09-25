@@ -2,7 +2,7 @@
 
 namespace PTCollection.EndlessRunner
 {
-    [CreateAssetMenu(menuName = "Scriptable Object/Ground Spawn Settings")]
+    [CreateAssetMenu(menuName = "Scriptable Object/Endless Runner/Ground Spawn Settings")]
     public class GroundSpawnSettings : ScriptableObject
     {
         [SerializeField] private float groundYMin = 0f;
