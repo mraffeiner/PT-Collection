@@ -1464,11 +1464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2088842522}
-  lookAhead: {x: 5, y: 0, z: 0}
+  followBounds: {fileID: 0}
+  lookAheadMultiplier: 0
   smoothTime: 0.2
   ignoreX: 0
   ignoreY: 1
-  ignoreZ: 1
 --- !u!4 &401787608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3830770299788580256, guid: 88fc997afb069114bab0981d58963413, type: 3}
@@ -2720,7 +2720,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1550305471
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0

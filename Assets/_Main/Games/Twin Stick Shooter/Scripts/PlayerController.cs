@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace PTCollection.TwinStickShooter

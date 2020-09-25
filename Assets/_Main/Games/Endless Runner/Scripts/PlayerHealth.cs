@@ -6,11 +6,11 @@ namespace PTCollection.EndlessRunner
     {
         [SerializeField] private GameObject gameOverScreen = null;
 
-        private InputHandler endlessRunnerInput;
+        private InputHandler inputHandler;
 
-        private void Awake() => endlessRunnerInput = FindObjectOfType<InputHandler>();
+        private void Awake() => inputHandler = FindObjectOfType<InputHandler>();
 
-        private void Start() => endlessRunnerInput.SwitchToGameplay();
+        private void Start() => inputHandler.SwitchToGameplay();
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -21,7 +21,7 @@ namespace PTCollection.EndlessRunner
         public void Lose()
         {
             gameOverScreen.SetActive(true);
-            endlessRunnerInput.SwitchToUI();
+            inputHandler.SwitchToUI();
 
             gameObject.SetActive(false);
         }
