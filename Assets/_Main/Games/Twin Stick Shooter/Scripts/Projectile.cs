@@ -7,6 +7,7 @@ namespace PTCollection.TwinStickShooter
         public PlayerStats Stats { get; set; }
 
         private Rigidbody2D body;
+        private bool enemyHit = false;
 
         private void Awake()
         {
@@ -15,15 +16,18 @@ namespace PTCollection.TwinStickShooter
             gameObject.SetActive(false);
         }
 
-        private void Update()
-        {
-            body.MovePosition(body.position + (Vector2)transform.right * Stats.ProjectileSpeed * Time.deltaTime);
-        }
+        private void OnEnable() => enemyHit = false;
+
+        private void Update() => body.MovePosition(body.position + (Vector2)transform.right * Stats.ProjectileSpeed * Time.deltaTime);
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (enemyHit)
+                return;
+
             if (other.tag == "Enemy")
             {
+                enemyHit = true;
                 other.GetComponent<Enemy>().TakeDamage(Stats.AttackDamage);
                 gameObject.SetActive(false);
             }

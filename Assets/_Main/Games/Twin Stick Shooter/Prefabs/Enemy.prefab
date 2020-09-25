@@ -579,7 +579,7 @@ MonoBehaviour:
   - {x: -0.44353008, y: -0.18234682, z: 0}
   m_ShapePathHash: -1481435823
   m_Mesh: {fileID: 0}
-  m_InstanceId: 136422
+  m_InstanceId: 42622
 --- !u!1 &7542110884410291155
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1550305471
+  m_SortingLayerID: -5153087
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1633455382081910106

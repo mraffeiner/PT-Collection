@@ -6,7 +6,7 @@ namespace PTCollection.EndlessRunner
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private Transform spriteTransform;
+        [SerializeField] private Transform spriteTransform = null;
         [SerializeField] private LayerMask groundLayer = 0;
         [SerializeField] private float moveSpeed = 10f;
         [SerializeField] private float jumpStrength = 10f;
