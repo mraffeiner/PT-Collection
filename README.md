@@ -3,7 +3,7 @@
  
 Playable at https://tastiham.itch.io/pt-collection?secret=5MxQRdPStoo8V4x26JUKuH3lFuQ
 
-# Credits
+### Credits
 
 Background Music:
 
