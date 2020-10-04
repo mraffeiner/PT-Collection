@@ -4,12 +4,12 @@ namespace PTCollection
 {
     public abstract class InputHandlerBase : MonoBehaviour
     {
-        protected SceneController sceneController;
+        protected SceneLoader sceneController;
         protected InputMaster input;
 
         protected virtual void Awake()
         {
-            sceneController = FindObjectOfType<SceneController>();
+            sceneController = FindObjectOfType<SceneLoader>();
 
             if (input == null)
                 input = new InputMaster();

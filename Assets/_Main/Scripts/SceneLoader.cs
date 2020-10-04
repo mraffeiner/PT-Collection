@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace PTCollection
 {
-    public class SceneController : MonoBehaviour
+    public class SceneLoader : MonoBehaviour
     {
         public event Action BeforeSceneUnload;
         public event Action AfterSceneLoad;

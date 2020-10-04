@@ -4,14 +4,14 @@ namespace PTCollection.TwinStickShooter
 {
     public class Exit : MonoBehaviour
     {
-        SceneController sceneController;
+        MapLoader mapLoader;
 
-        private void Awake() => sceneController = FindObjectOfType<SceneController>();
+        private void Awake() => mapLoader = FindObjectOfType<MapLoader>();
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
-                sceneController.ReloadCurrentScene();
+                mapLoader.LoadRandomMap();
         }
     }
 }

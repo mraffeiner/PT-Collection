@@ -422,7 +422,7 @@ RectTransform:
   - {fileID: 719841474}
   - {fileID: 1419906346}
   m_Father: {fileID: 1760832805}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3026,6 +3026,7 @@ GameObject:
   - component: {fileID: 1796311876}
   - component: {fileID: 1796311875}
   - component: {fileID: 1796311874}
+  - component: {fileID: 1796311877}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -3096,8 +3097,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+      - m_Target: {fileID: 1796311877}
+        m_TargetAssemblyTypeName: PTCollection.SceneReaction, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -3146,6 +3147,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796311872}
   m_CullTransparentMesh: 0
+--- !u!114 &1796311877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796311872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27023f3e5fcae7144affe7a1c75c06ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876193159
 GameObject:
   m_ObjectHideFlags: 0
