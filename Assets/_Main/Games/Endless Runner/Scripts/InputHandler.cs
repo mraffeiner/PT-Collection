@@ -1,51 +1,23 @@
-﻿using UnityEngine;
-
-namespace PTCollection.EndlessRunner
+﻿namespace PTCollection.EndlessRunner
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : InputHandlerBase
     {
-        private InputMaster input;
-        private SceneController sceneController;
         private PlayerController playerController;
 
-        private void Awake()
+        protected override void Awake()
         {
-            sceneController = FindObjectOfType<SceneController>();
+            base.Awake();
             playerController = FindObjectOfType<PlayerController>();
-
-            if (input == null)
-                input = new InputMaster();
         }
 
-        private void Start()
+        protected override void ConfigureGameplay()
         {
             input.EndlessRunner.Jump.performed += _ => playerController.OnJumpInput();
             input.EndlessRunner.Slide.performed += _ => playerController.OnSlideInput();
-
-            input.EndlessRunner.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
-            input.EndlessRunner.ExitToMainMenu.performed += _ => sceneController.FadeAndLoadScene("Main");
-
-            input.UI.Confirm.performed += _ => sceneController.ReloadCurrentScene();
-            input.UI.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
         }
 
-        public void OnEnable() => input.EndlessRunner.Enable();
+        protected override void EnableGameplay() => input.EndlessRunner.Enable();
 
-        public void OnDisable() => input.EndlessRunner.Disable();
-
-        //TODO: Remove this when there's a master script for input
-        private void OnDestroy() => input.Dispose();
-
-        public void SwitchToGameplay()
-        {
-            input.UI.Disable();
-            input.EndlessRunner.Enable();
-        }
-
-        public void SwitchToUI()
-        {
-            input.EndlessRunner.Disable();
-            input.UI.Enable();
-        }
+        protected override void DisableGameplay() => input.EndlessRunner.Disable();
     }
 }

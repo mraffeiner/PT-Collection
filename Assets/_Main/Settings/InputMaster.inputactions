@@ -2,6 +2,101 @@
     "name": "InputMaster",
     "maps": [
         {
+            "name": "Global",
+            "id": "96e21e6e-e563-4d7e-9b7c-6239163a8ca2",
+            "actions": [
+                {
+                    "name": "Reload Scene",
+                    "type": "Button",
+                    "id": "9ad17b2b-b4cb-4a4a-8933-45ec241728d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Exit To Main Menu",
+                    "type": "Button",
+                    "id": "ff1f1a3a-dda8-4f01-88f1-9628c931a8ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9678ed98-0bd7-4597-8aa9-33885dd2dbff",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc5da659-484a-4119-bb2b-e501f643f62c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Exit To Main Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "0cb770c9-8d3a-4b5e-a127-cb17c475b30a",
+            "actions": [
+                {
+                    "name": "Confirm",
+                    "type": "Button",
+                    "id": "c7c43e71-f1f1-4b26-9bc7-8dd46ece7bf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4de8eccc-df9e-4c0a-99b3-842e051f64f4",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfd65358-7394-4640-bf2f-ca571d4b699f",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed3c5d76-eb69-48d6-a4a4-82d69920b064",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Tower Defense",
             "id": "d097eb97-2aaf-4167-bab3-59e6cd82f91a",
             "actions": [
@@ -49,22 +144,6 @@
                     "name": "Skip Wave",
                     "type": "Button",
                     "id": "39df5c88-8611-4024-b6ce-ef596184bc29",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Reload Scene",
-                    "type": "Button",
-                    "id": "8ab16819-cf13-47cd-bfb9-f1d95d4ec5a5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Exit To Main Menu",
-                    "type": "Button",
-                    "id": "5e6c1999-5590-4dbf-a736-2ae3daadbcc0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -136,28 +215,6 @@
                     "action": "Skip Wave",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c2467d2f-0fa4-4474-9dd2-78dc645443f0",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Reload Scene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a8659032-868b-4509-9ff2-5527415e63b6",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Exit To Main Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -177,22 +234,6 @@
                     "name": "Slide",
                     "type": "Button",
                     "id": "24fe9e40-7024-4728-af74-2d01575d1fd3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Reload Scene",
-                    "type": "Button",
-                    "id": "93fa727d-5352-49a5-ac66-dbb02be887ce",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Exit To Main Menu",
-                    "type": "Button",
-                    "id": "9345e8ea-c18c-4a58-86d8-9b4f6b3d7f82",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -264,28 +305,6 @@
                     "action": "Slide",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "700be877-5e6a-414e-be68-60bcf72ad0c3",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Reload Scene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ae81d662-f451-4e43-bd12-a2d13f5d9139",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Exit To Main Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -313,22 +332,6 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "996e9ed8-5c81-4314-bdbc-104c66c256c7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Reload Scene",
-                    "type": "Button",
-                    "id": "bf8d518f-68ae-4a65-97ee-e15c7178b2e8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Exit To Main Menu",
-                    "type": "Button",
-                    "id": "9bc8f101-00ca-42af-8c1c-d91aa30ca82d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -403,28 +406,6 @@
                 },
                 {
                     "name": "",
-                    "id": "93c894a8-d5f0-43ca-b287-922c59ba6bc1",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Exit To Main Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c73e366-4b41-4ca2-bfb1-d43a061fe0a5",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Reload Scene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2afa7824-4e5c-417f-a720-356ea80099f9",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -442,74 +423,6 @@
                     "processors": "",
                     "groups": "KBM",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "0cb770c9-8d3a-4b5e-a127-cb17c475b30a",
-            "actions": [
-                {
-                    "name": "Confirm",
-                    "type": "Button",
-                    "id": "c7c43e71-f1f1-4b26-9bc7-8dd46ece7bf9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Reload Scene",
-                    "type": "Button",
-                    "id": "4c01041a-9aa6-4488-8165-f54f70af50fa",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "4de8eccc-df9e-4c0a-99b3-842e051f64f4",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dfd65358-7394-4640-bf2f-ca571d4b699f",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ed3c5d76-eb69-48d6-a4a4-82d69920b064",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ff5d7354-a61d-4b62-8881-58369668f961",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Reload Scene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

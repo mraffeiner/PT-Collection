@@ -15,6 +15,101 @@ public class @InputMaster : IInputActionCollection, IDisposable
     ""name"": ""InputMaster"",
     ""maps"": [
         {
+            ""name"": ""Global"",
+            ""id"": ""96e21e6e-e563-4d7e-9b7c-6239163a8ca2"",
+            ""actions"": [
+                {
+                    ""name"": ""Reload Scene"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ad17b2b-b4cb-4a4a-8933-45ec241728d6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit To Main Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff1f1a3a-dda8-4f01-88f1-9628c931a8ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9678ed98-0bd7-4597-8aa9-33885dd2dbff"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Reload Scene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc5da659-484a-4119-bb2b-e501f643f62c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Exit To Main Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""0cb770c9-8d3a-4b5e-a127-cb17c475b30a"",
+            ""actions"": [
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""c7c43e71-f1f1-4b26-9bc7-8dd46ece7bf9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4de8eccc-df9e-4c0a-99b3-842e051f64f4"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfd65358-7394-4640-bf2f-ca571d4b699f"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed3c5d76-eb69-48d6-a4a4-82d69920b064"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Tower Defense"",
             ""id"": ""d097eb97-2aaf-4167-bab3-59e6cd82f91a"",
             ""actions"": [
@@ -62,22 +157,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""Skip Wave"",
                     ""type"": ""Button"",
                     ""id"": ""39df5c88-8611-4024-b6ce-ef596184bc29"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Reload Scene"",
-                    ""type"": ""Button"",
-                    ""id"": ""8ab16819-cf13-47cd-bfb9-f1d95d4ec5a5"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Exit To Main Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""5e6c1999-5590-4dbf-a736-2ae3daadbcc0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -149,28 +228,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Skip Wave"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c2467d2f-0fa4-4474-9dd2-78dc645443f0"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Reload Scene"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a8659032-868b-4509-9ff2-5527415e63b6"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Exit To Main Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -190,22 +247,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""Slide"",
                     ""type"": ""Button"",
                     ""id"": ""24fe9e40-7024-4728-af74-2d01575d1fd3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Reload Scene"",
-                    ""type"": ""Button"",
-                    ""id"": ""93fa727d-5352-49a5-ac66-dbb02be887ce"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Exit To Main Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""9345e8ea-c18c-4a58-86d8-9b4f6b3d7f82"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -277,28 +318,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Slide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""700be877-5e6a-414e-be68-60bcf72ad0c3"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Reload Scene"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ae81d662-f451-4e43-bd12-a2d13f5d9139"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Exit To Main Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -326,22 +345,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""Shoot"",
                     ""type"": ""Button"",
                     ""id"": ""996e9ed8-5c81-4314-bdbc-104c66c256c7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Reload Scene"",
-                    ""type"": ""Button"",
-                    ""id"": ""bf8d518f-68ae-4a65-97ee-e15c7178b2e8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Exit To Main Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""9bc8f101-00ca-42af-8c1c-d91aa30ca82d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -416,28 +419,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""93c894a8-d5f0-43ca-b287-922c59ba6bc1"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Exit To Main Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c73e366-4b41-4ca2-bfb1-d43a061fe0a5"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Reload Scene"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2afa7824-4e5c-417f-a720-356ea80099f9"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -455,74 +436,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""KBM"",
                     ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""UI"",
-            ""id"": ""0cb770c9-8d3a-4b5e-a127-cb17c475b30a"",
-            ""actions"": [
-                {
-                    ""name"": ""Confirm"",
-                    ""type"": ""Button"",
-                    ""id"": ""c7c43e71-f1f1-4b26-9bc7-8dd46ece7bf9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Reload Scene"",
-                    ""type"": ""Button"",
-                    ""id"": ""4c01041a-9aa6-4488-8165-f54f70af50fa"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""4de8eccc-df9e-4c0a-99b3-842e051f64f4"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dfd65358-7394-4640-bf2f-ca571d4b699f"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ed3c5d76-eb69-48d6-a4a4-82d69920b064"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Confirm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ff5d7354-a61d-4b62-8881-58369668f961"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Reload Scene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -548,6 +461,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     ]
 }");
+        // Global
+        m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
+        m_Global_ReloadScene = m_Global.FindAction("Reload Scene", throwIfNotFound: true);
+        m_Global_ExitToMainMenu = m_Global.FindAction("Exit To Main Menu", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Confirm = m_UI.FindAction("Confirm", throwIfNotFound: true);
         // Tower Defense
         m_TowerDefense = asset.FindActionMap("Tower Defense", throwIfNotFound: true);
         m_TowerDefense_Speedx1 = m_TowerDefense.FindAction("Speedx1", throwIfNotFound: true);
@@ -556,25 +476,15 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_TowerDefense_Speedx4 = m_TowerDefense.FindAction("Speedx4", throwIfNotFound: true);
         m_TowerDefense_Speedx5 = m_TowerDefense.FindAction("Speedx5", throwIfNotFound: true);
         m_TowerDefense_SkipWave = m_TowerDefense.FindAction("Skip Wave", throwIfNotFound: true);
-        m_TowerDefense_ReloadScene = m_TowerDefense.FindAction("Reload Scene", throwIfNotFound: true);
-        m_TowerDefense_ExitToMainMenu = m_TowerDefense.FindAction("Exit To Main Menu", throwIfNotFound: true);
         // Endless Runner
         m_EndlessRunner = asset.FindActionMap("Endless Runner", throwIfNotFound: true);
         m_EndlessRunner_Jump = m_EndlessRunner.FindAction("Jump", throwIfNotFound: true);
         m_EndlessRunner_Slide = m_EndlessRunner.FindAction("Slide", throwIfNotFound: true);
-        m_EndlessRunner_ReloadScene = m_EndlessRunner.FindAction("Reload Scene", throwIfNotFound: true);
-        m_EndlessRunner_ExitToMainMenu = m_EndlessRunner.FindAction("Exit To Main Menu", throwIfNotFound: true);
         // Twin Stick Shooter
         m_TwinStickShooter = asset.FindActionMap("Twin Stick Shooter", throwIfNotFound: true);
         m_TwinStickShooter_Move = m_TwinStickShooter.FindAction("Move", throwIfNotFound: true);
         m_TwinStickShooter_Aim = m_TwinStickShooter.FindAction("Aim", throwIfNotFound: true);
         m_TwinStickShooter_Shoot = m_TwinStickShooter.FindAction("Shoot", throwIfNotFound: true);
-        m_TwinStickShooter_ReloadScene = m_TwinStickShooter.FindAction("Reload Scene", throwIfNotFound: true);
-        m_TwinStickShooter_ExitToMainMenu = m_TwinStickShooter.FindAction("Exit To Main Menu", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Confirm = m_UI.FindAction("Confirm", throwIfNotFound: true);
-        m_UI_ReloadScene = m_UI.FindAction("Reload Scene", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -621,6 +531,80 @@ public class @InputMaster : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
+    // Global
+    private readonly InputActionMap m_Global;
+    private IGlobalActions m_GlobalActionsCallbackInterface;
+    private readonly InputAction m_Global_ReloadScene;
+    private readonly InputAction m_Global_ExitToMainMenu;
+    public struct GlobalActions
+    {
+        private @InputMaster m_Wrapper;
+        public GlobalActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ReloadScene => m_Wrapper.m_Global_ReloadScene;
+        public InputAction @ExitToMainMenu => m_Wrapper.m_Global_ExitToMainMenu;
+        public InputActionMap Get() { return m_Wrapper.m_Global; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GlobalActions set) { return set.Get(); }
+        public void SetCallbacks(IGlobalActions instance)
+        {
+            if (m_Wrapper.m_GlobalActionsCallbackInterface != null)
+            {
+                @ReloadScene.started -= m_Wrapper.m_GlobalActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.performed -= m_Wrapper.m_GlobalActionsCallbackInterface.OnReloadScene;
+                @ReloadScene.canceled -= m_Wrapper.m_GlobalActionsCallbackInterface.OnReloadScene;
+                @ExitToMainMenu.started -= m_Wrapper.m_GlobalActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.performed -= m_Wrapper.m_GlobalActionsCallbackInterface.OnExitToMainMenu;
+                @ExitToMainMenu.canceled -= m_Wrapper.m_GlobalActionsCallbackInterface.OnExitToMainMenu;
+            }
+            m_Wrapper.m_GlobalActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ReloadScene.started += instance.OnReloadScene;
+                @ReloadScene.performed += instance.OnReloadScene;
+                @ReloadScene.canceled += instance.OnReloadScene;
+                @ExitToMainMenu.started += instance.OnExitToMainMenu;
+                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
+                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
+            }
+        }
+    }
+    public GlobalActions @Global => new GlobalActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_Confirm;
+    public struct UIActions
+    {
+        private @InputMaster m_Wrapper;
+        public UIActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Confirm => m_Wrapper.m_UI_Confirm;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @Confirm.started -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
+                @Confirm.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
+                @Confirm.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Confirm.started += instance.OnConfirm;
+                @Confirm.performed += instance.OnConfirm;
+                @Confirm.canceled += instance.OnConfirm;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
+
     // Tower Defense
     private readonly InputActionMap m_TowerDefense;
     private ITowerDefenseActions m_TowerDefenseActionsCallbackInterface;
@@ -630,8 +614,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_TowerDefense_Speedx4;
     private readonly InputAction m_TowerDefense_Speedx5;
     private readonly InputAction m_TowerDefense_SkipWave;
-    private readonly InputAction m_TowerDefense_ReloadScene;
-    private readonly InputAction m_TowerDefense_ExitToMainMenu;
     public struct TowerDefenseActions
     {
         private @InputMaster m_Wrapper;
@@ -642,8 +624,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Speedx4 => m_Wrapper.m_TowerDefense_Speedx4;
         public InputAction @Speedx5 => m_Wrapper.m_TowerDefense_Speedx5;
         public InputAction @SkipWave => m_Wrapper.m_TowerDefense_SkipWave;
-        public InputAction @ReloadScene => m_Wrapper.m_TowerDefense_ReloadScene;
-        public InputAction @ExitToMainMenu => m_Wrapper.m_TowerDefense_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_TowerDefense; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -671,12 +651,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @SkipWave.started -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnSkipWave;
                 @SkipWave.performed -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnSkipWave;
                 @SkipWave.canceled -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnSkipWave;
-                @ReloadScene.started -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.performed -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.canceled -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnReloadScene;
-                @ExitToMainMenu.started -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.performed -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.canceled -= m_Wrapper.m_TowerDefenseActionsCallbackInterface.OnExitToMainMenu;
             }
             m_Wrapper.m_TowerDefenseActionsCallbackInterface = instance;
             if (instance != null)
@@ -699,12 +673,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @SkipWave.started += instance.OnSkipWave;
                 @SkipWave.performed += instance.OnSkipWave;
                 @SkipWave.canceled += instance.OnSkipWave;
-                @ReloadScene.started += instance.OnReloadScene;
-                @ReloadScene.performed += instance.OnReloadScene;
-                @ReloadScene.canceled += instance.OnReloadScene;
-                @ExitToMainMenu.started += instance.OnExitToMainMenu;
-                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
-                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
             }
         }
     }
@@ -715,16 +683,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IEndlessRunnerActions m_EndlessRunnerActionsCallbackInterface;
     private readonly InputAction m_EndlessRunner_Jump;
     private readonly InputAction m_EndlessRunner_Slide;
-    private readonly InputAction m_EndlessRunner_ReloadScene;
-    private readonly InputAction m_EndlessRunner_ExitToMainMenu;
     public struct EndlessRunnerActions
     {
         private @InputMaster m_Wrapper;
         public EndlessRunnerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_EndlessRunner_Jump;
         public InputAction @Slide => m_Wrapper.m_EndlessRunner_Slide;
-        public InputAction @ReloadScene => m_Wrapper.m_EndlessRunner_ReloadScene;
-        public InputAction @ExitToMainMenu => m_Wrapper.m_EndlessRunner_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_EndlessRunner; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -740,12 +704,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Slide.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
                 @Slide.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
                 @Slide.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnSlide;
-                @ReloadScene.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnReloadScene;
-                @ExitToMainMenu.started -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.performed -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.canceled -= m_Wrapper.m_EndlessRunnerActionsCallbackInterface.OnExitToMainMenu;
             }
             m_Wrapper.m_EndlessRunnerActionsCallbackInterface = instance;
             if (instance != null)
@@ -756,12 +714,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Slide.started += instance.OnSlide;
                 @Slide.performed += instance.OnSlide;
                 @Slide.canceled += instance.OnSlide;
-                @ReloadScene.started += instance.OnReloadScene;
-                @ReloadScene.performed += instance.OnReloadScene;
-                @ReloadScene.canceled += instance.OnReloadScene;
-                @ExitToMainMenu.started += instance.OnExitToMainMenu;
-                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
-                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
             }
         }
     }
@@ -773,8 +725,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_TwinStickShooter_Move;
     private readonly InputAction m_TwinStickShooter_Aim;
     private readonly InputAction m_TwinStickShooter_Shoot;
-    private readonly InputAction m_TwinStickShooter_ReloadScene;
-    private readonly InputAction m_TwinStickShooter_ExitToMainMenu;
     public struct TwinStickShooterActions
     {
         private @InputMaster m_Wrapper;
@@ -782,8 +732,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_TwinStickShooter_Move;
         public InputAction @Aim => m_Wrapper.m_TwinStickShooter_Aim;
         public InputAction @Shoot => m_Wrapper.m_TwinStickShooter_Shoot;
-        public InputAction @ReloadScene => m_Wrapper.m_TwinStickShooter_ReloadScene;
-        public InputAction @ExitToMainMenu => m_Wrapper.m_TwinStickShooter_ExitToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_TwinStickShooter; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -802,12 +750,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Shoot.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnShoot;
-                @ReloadScene.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnReloadScene;
-                @ExitToMainMenu.started -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.performed -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
-                @ExitToMainMenu.canceled -= m_Wrapper.m_TwinStickShooterActionsCallbackInterface.OnExitToMainMenu;
             }
             m_Wrapper.m_TwinStickShooterActionsCallbackInterface = instance;
             if (instance != null)
@@ -821,57 +763,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
-                @ReloadScene.started += instance.OnReloadScene;
-                @ReloadScene.performed += instance.OnReloadScene;
-                @ReloadScene.canceled += instance.OnReloadScene;
-                @ExitToMainMenu.started += instance.OnExitToMainMenu;
-                @ExitToMainMenu.performed += instance.OnExitToMainMenu;
-                @ExitToMainMenu.canceled += instance.OnExitToMainMenu;
             }
         }
     }
     public TwinStickShooterActions @TwinStickShooter => new TwinStickShooterActions(this);
-
-    // UI
-    private readonly InputActionMap m_UI;
-    private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_Confirm;
-    private readonly InputAction m_UI_ReloadScene;
-    public struct UIActions
-    {
-        private @InputMaster m_Wrapper;
-        public UIActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Confirm => m_Wrapper.m_UI_Confirm;
-        public InputAction @ReloadScene => m_Wrapper.m_UI_ReloadScene;
-        public InputActionMap Get() { return m_Wrapper.m_UI; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-        public void SetCallbacks(IUIActions instance)
-        {
-            if (m_Wrapper.m_UIActionsCallbackInterface != null)
-            {
-                @Confirm.started -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
-                @Confirm.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
-                @Confirm.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnConfirm;
-                @ReloadScene.started -= m_Wrapper.m_UIActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnReloadScene;
-                @ReloadScene.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnReloadScene;
-            }
-            m_Wrapper.m_UIActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Confirm.started += instance.OnConfirm;
-                @Confirm.performed += instance.OnConfirm;
-                @Confirm.canceled += instance.OnConfirm;
-                @ReloadScene.started += instance.OnReloadScene;
-                @ReloadScene.performed += instance.OnReloadScene;
-                @ReloadScene.canceled += instance.OnReloadScene;
-            }
-        }
-    }
-    public UIActions @UI => new UIActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -881,6 +776,15 @@ public class @InputMaster : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_KBMSchemeIndex];
         }
     }
+    public interface IGlobalActions
+    {
+        void OnReloadScene(InputAction.CallbackContext context);
+        void OnExitToMainMenu(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnConfirm(InputAction.CallbackContext context);
+    }
     public interface ITowerDefenseActions
     {
         void OnSpeedx1(InputAction.CallbackContext context);
@@ -889,27 +793,16 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnSpeedx4(InputAction.CallbackContext context);
         void OnSpeedx5(InputAction.CallbackContext context);
         void OnSkipWave(InputAction.CallbackContext context);
-        void OnReloadScene(InputAction.CallbackContext context);
-        void OnExitToMainMenu(InputAction.CallbackContext context);
     }
     public interface IEndlessRunnerActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
-        void OnReloadScene(InputAction.CallbackContext context);
-        void OnExitToMainMenu(InputAction.CallbackContext context);
     }
     public interface ITwinStickShooterActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-        void OnReloadScene(InputAction.CallbackContext context);
-        void OnExitToMainMenu(InputAction.CallbackContext context);
-    }
-    public interface IUIActions
-    {
-        void OnConfirm(InputAction.CallbackContext context);
-        void OnReloadScene(InputAction.CallbackContext context);
     }
 }
