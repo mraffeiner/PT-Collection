@@ -30,7 +30,8 @@ namespace PTCollection.TowerDefense
         {
             Health = maxHealth;
             towerDefenseController.enabled = true;
-            GameSpeed.Factor = 1F;
+
+            towerDefenseController.SwitchToGameplay();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -46,15 +47,16 @@ namespace PTCollection.TowerDefense
             if (Health <= 0)
             {
                 Lose();
-                enabled = false;
+                GetComponent<Collider2D>().enabled = false;
             }
         }
 
         public void Lose()
         {
             GameSpeed.Factor = .2f;
-            towerDefenseController.enabled = false;
             gameOverScreen.SetActive(true);
+
+            towerDefenseController.SwitchToUI();
         }
     }
 }

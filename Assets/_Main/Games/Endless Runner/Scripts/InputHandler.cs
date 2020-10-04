@@ -23,7 +23,7 @@ namespace PTCollection.EndlessRunner
             input.EndlessRunner.Slide.performed += _ => playerController.OnSlideInput();
 
             input.EndlessRunner.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
-            input.EndlessRunner.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
+            input.EndlessRunner.ExitToMainMenu.performed += _ => sceneController.FadeAndLoadScene("Main");
 
             input.UI.Confirm.performed += _ => sceneController.ReloadCurrentScene();
             input.UI.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();

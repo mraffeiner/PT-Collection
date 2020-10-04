@@ -25,7 +25,7 @@ namespace PTCollection.TwinStickShooter
             input.TwinStickShooter.Shoot.performed += _ => playerController.OnShootInput();
 
             input.TwinStickShooter.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
-            input.TwinStickShooter.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
+            input.TwinStickShooter.ExitToMainMenu.performed += _ => sceneController.FadeAndLoadScene("Main");
 
             input.UI.Confirm.performed += _ => sceneController.ReloadCurrentScene();
             input.UI.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
@@ -41,12 +41,12 @@ namespace PTCollection.TwinStickShooter
         public void SwitchToGameplay()
         {
             input.UI.Disable();
-            input.EndlessRunner.Enable();
+            input.TwinStickShooter.Enable();
         }
 
         public void SwitchToUI()
         {
-            input.EndlessRunner.Disable();
+            input.TwinStickShooter.Disable();
             input.UI.Enable();
         }
     }

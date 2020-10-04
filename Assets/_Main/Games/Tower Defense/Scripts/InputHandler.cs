@@ -27,7 +27,10 @@ namespace PTCollection.TowerDefense
             input.TowerDefense.Speedx5.performed += _ => GameSpeed.Factor = 5f;
 
             input.TowerDefense.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
-            input.TowerDefense.ExitToMainMenu.performed += _ => sceneController.LoadScene("Main");
+            input.TowerDefense.ExitToMainMenu.performed += _ => sceneController.FadeAndLoadScene("Main");
+
+            input.UI.Confirm.performed += _ => sceneController.ReloadCurrentScene();
+            input.UI.ReloadScene.performed += _ => sceneController.ReloadCurrentScene();
         }
 
         public void OnEnable() => input.TowerDefense.Enable();
@@ -36,5 +39,17 @@ namespace PTCollection.TowerDefense
 
         //TODO: Remove this when there's a master script for input
         private void OnDestroy() => input.Dispose();
+
+        public void SwitchToGameplay()
+        {
+            input.UI.Disable();
+            input.TowerDefense.Enable();
+        }
+
+        public void SwitchToUI()
+        {
+            input.TowerDefense.Disable();
+            input.UI.Enable();
+        }
     }
 }
